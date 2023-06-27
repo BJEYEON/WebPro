@@ -1,0 +1,41 @@
+20230627 두번째 수업내용
+
+오늘은 변수 사용법에대해 배웠다.
+변수에 생각보다 여러 종류가 있다는것을 알게되었고
+유독 기억에 남는점은 객체자료형 변수는 앞에 대문자를 쓴다는것을 알게되었다.
+값을 출력할때로 더욱 편하게 출력하는것도 이번에 알게되었다%c-문자. %s-문자열. %d-10진수. %x-16진수  %f-실수출력
+간단한 IF문도 배워서 기존에 ELSE가 한줄일때 중괄호를 잘넣지 않았는데 나쁜습관이라는것도 알게되었다.
+수업을 잘 들은 덕분인지 강사님이 내주신 퀴즈도 어렵지 않게 풀었다.
+
+실습 예제 : 국어, 영어, 수학 점수를 변수에 할당하고 각 점수를 출력하고 총점, 평균 출력하는 프로그램을 구현 하시오
+package com.lec.Quiz;
+
+public class Example {
+	public static void main(String[] args) {
+		int kor = 90;
+		int eng = 80;
+		int math = 70;
+		int total;
+		total = kor + eng + math; //총점
+		System.out.println("수학점수: " + math + "점");
+		System.out.println("영어점수: " + eng + "점");
+		System.out.println("국어점수: " + kor + "점");
+		System.out.println("평군점수: " + (double)total/3 + "점");
+		
+		System.out.print("수학점수: " + math + "점");
+		System.out.print("영어점수: " + eng + "점");
+		System.out.print("국어점수: " + kor + "점");
+		System.out.print("평군점수: " + (double)total/3 + "점");
+		
+		System.out.print("수학점수: " + math + "점");
+		System.out.print("영어점수: " + eng + "점");
+		System.out.print("국어점수: " + kor + "점");
+		System.out.print("평군점수: " + (double)total/3 + "점");
+		
+		System.out.printf("\r\n수학점수=%d", math);
+		System.out.printf("\r\n영어점수=%d", eng);
+		System.out.printf("\r\n국어점수=%d", kor);
+		System.out.printf("\r\n평군점수=%f", total/3.0);
+	}
+
+}
