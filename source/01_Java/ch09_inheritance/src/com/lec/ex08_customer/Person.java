@@ -8,7 +8,7 @@ public class Person {
 		this.tel = tel;
 	}
 	public String infoString() {
-		return "[이름]" + name + "[전화]" + tel;
+		return String.format("[이름]" + name + "[전화]" + tel);
 	}
 	public String getName() {
 		return name;
