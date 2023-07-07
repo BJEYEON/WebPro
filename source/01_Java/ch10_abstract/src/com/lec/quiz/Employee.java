@@ -1,4 +1,4 @@
-package com.lec.Quiz;
+package com.lec.quiz;
 
 public abstract class Employee {
 	private String name;
@@ -6,7 +6,7 @@ public abstract class Employee {
 		this.name = name;
 	}
 	public abstract int computePay(); //월급인데 바뀔수도있으니 추상변수
-	public final int computeIncentive() {// 인센티브
+	public final int computeIncentive() {// 인센티브(final오버라이드금지)
 		int temp = computePay();
 		if (temp>=300000) {
 			return (int)(temp*0.05);
