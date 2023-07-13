@@ -16,7 +16,7 @@ public class Person {
 	public boolean equals(Object obj) {
 		//p1.equals(p2)
 		//(this.)juminNO와 obj.juminNo같으면true를 return
-		if (obj!=null && obj instanceof Person) {
+		if (obj!=null && obj instanceof Person) {//obj는모든객체 가능 person main에있는 new옆에있는 변수가person인지?
 			Person other = (Person)obj;
 			boolean juminNoChk = (juminno == other.juminno);
 			return juminNoChk;
