@@ -1,4 +1,4 @@
-package ex1_tryCatch;
+package com.lec.ex1_tryCatch;
 
 import java.util.Scanner;
 
@@ -13,8 +13,8 @@ public class Ex01 {
 		try {
 		System.out.println("i/j=" + (i/j));//예외가 발생할 수도 있고, 안할수 있는부분
 		}catch(ArithmeticException e) {//ArithmeticException 예외발생시 수행부분
-			e.printStackTrace();//좀 더 자세한 예외메세지
-			//System.out.println(e.getMessage());//로그메세지
+			//e.printStackTrace();//좀 더 자세한 예외메세지
+			System.out.println(e.getMessage());//로그메세지
 			
 		}
 		System.out.println("i*j=" + (i*j));
