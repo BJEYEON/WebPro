@@ -22,8 +22,17 @@ public class CustomMain {
 			tel = scanner.nextLine();
 			System.out.print("주소?");
 			adrress = scanner.nextLine();
-			//custom.add
+			
 			customers.add(new Customer(name, tel, adrress));
+//			Customer customer = new Customer();//customer.name tel = null
+//			System.out.print("이름?");
+//			customer.setName(scanner.nextLine());
+//			System.out.print("전화?");
+//			customer.setTel(scanner.nextLine());
+//			System.out.print("주소?");
+//			customer.setAddress(scanner.nextLine());
+//			customers.add(customer);
+
 		}
 		// N(n)를 입력하면 가입한 고객정보 출력(arrayList for문을 출력)
 		if (customers.size()==0) {
