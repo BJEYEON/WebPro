@@ -1,0 +1,34 @@
+20230718 열일곱번째수업
+
+1. 입출력이란?
+I/O란? 입력(Input)과 출력(Output)을 뜻 합니다. 프로그램에게 입력하는 것은 Input이며, 프로그램에서 어떤 것을 출력하는 것을 Output이라고 합니다.
+앞에서 살펴본 ‘System.out.println("HelloWorld~~");’ 구문이 바로 Output 입니다.
+2. Java에서의 파일입출력 API
+(1) InputStream : 1byte단위 입력 API. 이미지, 동영상 등의 데이터에 주로 사용
+(2) OutputStream : 1byte단위 출력 API. 이미지, 동영상 등의 데이터에 주로 사용
+(3) Reader : 2byte단위 입력 API. 문자열에 주로 사용
+(4) Writer : 2byte단위 출력 API. 문자열에 주로 사용
+
+InputStream 사용법
+1 InputStream(추상) 클래스를 상속받은 여러 가지 API 하위 클래스 중의 하나를 이용해서 객체를 만든다. 또는 다른 클래스의 메소드에서 반환(리턴)되는 타입 객체를 얻는다.
+2 read(), read(byte[]) 두 개의 메소드를 이용하여 데이터를 읽는다.
+2.i. read() 1byte씩 읽는다. 속도가 느리다
+2.ii. read(byte[]) byte[]만큼씩 읽는다. 속도가 빠르다.
+3 예외 처리와 무조건 close() 실행
+3.i. I/O를 하면서 반드시 해야 하는 예외처리가 있습니다. IOException입니다. 반드시 하도록 컴파일러가 강요합니다
+3.ii. I/O 작업 마지막은 close()로 외부 연결을 끝내야 합니다
+
+OutputStream 사용법
+1 OutputStream(추상) 클래스를 상속받은 여러가지 API 하위 클래스들 중의 하나를 이용해서 객체를 만든다. 또는 다른 클래스의 메소드에서 반환(리턴)되는 타입 객체를 얻는다.
+2 write()메소드를 이용해서 데이터를 읽으면 됩니다.
+3 write(int), write(byte[]), write(byte[], int, int) 세개의 메소드를 이용할 수 있습니다.
+4 예외 처리와 무조건 close() 실행
+4.i. I/O를 하면서 반드시 해야 하는 예외처리가 있습니다. IOException입니다. 반드시 하도록 컴파일러가 강요합니다
+4.ii. I/O 작업 마지막은 close()로 외부 연결을 끝내야 합니다
+
+3. 파일 읽고 쓰기
+(1) 읽고, 쓰기를 동시에 – 파일 복사
+1 파일을 읽고, 다른 파일에 쓰고, 결국은 파일 복사 입니다.
+2 작업순서 : InputStream, OutputStream 준비 > is로 읽어들인 데이터를 os으로 씀 > 외부연결 close()함. 
+3 read() : read(), read(byte[]) 등 다양한 메소드 이용 가능
+4 write() : write(byte), write(byte[]), (write(byte[], int, int) 등 다양한 메소드 이용 가능
