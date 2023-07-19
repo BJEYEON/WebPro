@@ -45,7 +45,7 @@ public class Ex {
 				if (printWriter!=null) printWriter.close();
 				if (os!=null) os.close();
 				if (writer!=null) writer.close();
-			} catch (IOException e) {
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
