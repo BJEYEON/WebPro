@@ -1,0 +1,55 @@
+20230724
+
+단일행함수
+SQL함수는 단일행함수(INPUT1 -> OUTPUT 1)
+			오직 단일 행에서만 적용가능하고 행 별로 하나의 결과를 리턴
+			문자, 숫자, 날짜 형 변환 함수 등
+			ex. SELECT ENAME, TO_CHAR(HIREDATE, 'YY"년"') 입사년 FROM EMP; --단일행
+			   SELECT ename, replace(ename, 'A','B') FROM emp;   -- input1행 output1행
+        그룹함수(INPUT n행 -> OUTPUT 1행)
+			여러 개의 행을 조작하여 행의 그룹당 하나의 결과를 리턴
+			ex. SELECT SUM(SAL) FROM EMP;              -- 그룹함수(input n행, output)
+			ex. SELECT DEPTNO, SUM(SAL) FROM EMP GROUP BY DEPTNO;
+1. DUAL 테이블과 SQL 함수 분류
+(1) DUAL 테이블의 구조
+; DUAL은 테스트하기 위한 용도의 oracle 내장 객체, 한 행으로 출력된다. 주로, 연산, 함수적용내용 확인 시 활용. 산술연산결과를 한줄로 얻기 위해 오라클에서 제공하는 테이블
+DESC DUAL;를 통해 실행결과를 보면 DUAL 테이블은 DUMMY라는 단 하나의 컬럼으로 구성되어 있습니다. 이 컬럼에는 최대 길이는 1byte입니다
+DUMMY 컬럼엔 과연 어떤 값이 저장되어 있는 것일까요?
+SELECT * FROM DUAL; 
+DESC DUAL;
+SELECT 12*4 FROM DUAL;
+SELECT 12*4 FROM EMP;
+DUAL 테이블은 DUMMY라는 단 하나의 컬럼에 X라는 단 하나의 로우만을 저장하고 있으나 이 값은 아무런 의미가 없습니다. 
+쿼리문의 수행 결과가 하나의 로우로 출력되도록 하기 위해서 단 하나의 로우를 구성하고 있을 뿐입니다. 그래서 다음의 함수 실습에 이용할 것입니다
+
+2. 숫자 함수 : 숫자를 처리하는 함수. 절대값, 수학함수(sin, cos, tan…), 올림(ceil), 반올림(round), 내림(trunc), 나머지(mod) 등
+
+3. 문자처리함수
+(1) LOWER(str) : 소문자로
+(2) UPPER(str) : 대문자로
+(3) INITCAP(str) : 첫 글자만 대문자로 나머지 글자는 소문자로
+(4) CONCAT(str1, str2) : 문자 연결
+(5) SUBSTR(str, 시작할위치, 추출할갯수) : 문자를 잘라 추출 (한글은 1byte), 시작할위치는 인덱스 아님
+                    시작할 위치가 음수이면 끝에서부터 자리수를 센다
+(6) SUBSTRB(str, 시작할위치,추출할갯수) : 문자를 잘라 추출 (한글은 3byte)
+(7) LENGTH(str) : 문자길이 (한글은 1byte)
+(8) LENGTHB(str) : 문자길이 (한글은 2~3byte)
+(9) INSTR(str, 찾을글자, 시작위치, 몇번째발견 검색된 횟수) str에서 찾을글자를 몇번째 발견하는지
+(10) LPAD, RPAD : 입력 받은 문자열과 기호를 정렬하여 특정 길이의 문자열로 반환한다
+(11) TRIM : 잘라내고 남은 문자를 표시한다
+(12) CHR : ASCII코드 값으로 SELECT CHR(65) FROM DUAL;
+(13) ASCII : ASCII코드값을 문자로
+(14) REPLACE : 문자열에서 특정문자를 변경
+
+4. 날짜함수
+(1) SYSDATE 시스템 저장된 현재 날짜를 반환한다.
+(2) MONTHS_BETWEEN 두 날짜 사이가 몇 개월인지를 반환한다
+(3) ADD_MONTHS 특정 날짜에 개월 수를 더한다
+(4) NEXT_DAY 특정 날짜에서 최초로 도래하는 인자로 받은 요일의 날짜를 반환한다
+(5) LAST_DAY 해당 달의 마지막 날짜를 반환한다
+(6) ROUND 인자로 받은 날짜를 특정 기준으로 반올림한다
+(7) TRUNC 인자로 받은 날짜를 특정 기준으로 버린다
+
+5. 형변환함수 ; 오라클을 사용하다 보면 숫자, 문자, 날짜의 데이터 형을 다른 데이터형으로 변환해야 하는 경우가 생신다. 이럴때 사용하는 함수가 형변환 함수이다.
+(1) TO_CHAR : 날짜형 혹은 숫자형을 문자형으로 변환
+TO_CHAT(숫자데이터, ‘출력형식’);
