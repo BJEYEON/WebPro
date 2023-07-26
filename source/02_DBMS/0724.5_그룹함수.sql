@@ -113,36 +113,62 @@ SELECT DEPTNO, COUNT(*)
     GROUP BY DEPTNO
     HAVING COUNT(*)>=5;
 -- 8. 사원수가 5명이상 넘는 부서명과 사원수를 출력
-SELECT DNAME, COUNT(ENPNO)
+SELECT DNAME, COUNT(*)
     FROM EMP E , DEPT D
-    WHERE E.DEPTNO=D.DEPTNO AND COUNT(EMPNO)>=5
-    GROUP BY DNAME;
-    
-    
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME
+    HAVING COUNT(*)>=5;
 --9. 업무별 급여의 평균이 3000이상인 업무에 대해서 업무명, 평균 급여, 급여의 합을 출력
-
+SELECT JOB, AVG(SAL), SUM(SAL)
+    FROM EMP
+    GROUP BY JOB
+    HAVING AVG(SAL)>=3000;
 --10. 급여 합이 5000을 초과하는 각 업무에 대해서 업무와 급여합을 출력(급여 합계순 내림차순 정렬)
-
+SELECT JOB, SUM(SAL)
+    FROM EMP
+    GROUP BY JOB
+    HAVING SUM(SAL)>=5000;
 --11. 부서별 급여평균, 부서별 급여합계, 부서별 최소급여를 출력
-
+SELECT DNAME, AVG(SAL), SUM(SAL), MIN(SAL)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME;
 --12. 위의 11번을 수정하여, 부서별 급여평균 최대치, 부서별 급여합의 최대치, 부서별 최소급여의 최대치를 출력
-
+SELECT MAX(AVG(SAL)), MAX(SUM(SAL)), MAX(MIN(SAL))
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME;
 --13. 사원 테이블에서 아래의 결과를 출력
 --   H_YEAR	COUNT(*)	MIN(SAL)	MAX(SAL)	AVG(SAL)	SUM(SAL)
 --     80	  1		    800		    800		    800		    800
 --	81	 10		    950		    5000	    2282.5	  22825
 --	82	  2		    1300	    3000	   2150		   4300
 --	83	  1		    1100	    1100	    1100	   1100
-
+SELECT TO_CHAR(HIREDATE, 'RR'), COUNT(*), MIN(SAL), MAX(SAL), AVG(SAL)
+    FROM EMP
+    GROUP BY ROLLUP (TO_CHAR(HIREDATE, 'RR'))
+    ORDER BY (TO_CHAR(HIREDATE, 'RR'));
 -- 14.  아래의 결과를 출력(입사년도별 사원수)
 --  1980     1	
 --  1981     10
 --  1982     2
 --  1983     1
 --  total    14	
-
+SELECT NVL(TO_CHAR(HIREDATE, 'YYYY'),'TOTAL'), COUNT(HIREDATE)
+    FROM EMP
+    GROUP BY ROLLUP (TO_CHAR(HIREDATE, 'YYYY'));
+    --ORDER BY HIREDATE;
 --15. 최대급여, 최소급여, 전체급여합, 평균을 출력
-
+SELECT MAX(SAL), MIN(SAL), SUM(SAL), AVG(SAL)
+    FROM EMP;
 --16. 부서별 인원수 출력
-
+SELECT DNAME, COUNT(DNAME)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME;
 --17. 부서별 인원수가 6명이상인 부서번호 출력
+SELECT DNAME, COUNT(DNAME)
+    FROM EMP E, DEPT D
+    WHERE E.DEPTNO=D.DEPTNO
+    GROUP BY DNAME
+    HAVING COUNT(DNAME)>=6;
