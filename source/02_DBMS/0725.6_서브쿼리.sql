@@ -286,7 +286,7 @@ SELECT EMPNO,ENAME, SAL, DEPTNO
         FROM EMP E
         WHERE SAL > (SELECT AVG(SAL) FROM EMP WHERE DEPTNO=E.DEPTNO);
 -- 24. 업무별로 평균 월급보다 적은 월급을 받는 사원을 부서번호, 이름, 급여
-SELEC
+
 -- 25. 적어도 한 명 이상으로부터 보고를 받을 수 있는 사원을 업무, 이름, 사번, 부서번호를 출력(단, 부서번호 순으로 오름차순 정렬)
 
 -- 26.  말단 사원의 사번, 이름, 업무, 부서번호
