@@ -51,7 +51,7 @@ public class SelectAllOracle {
 			System.out.println(e.getMessage());
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-		}finally {
+		}finally {//7. 연결해제
 			try {
 				if (rs != null) rs.close();
 				if (stmt != null) stmt.close();
