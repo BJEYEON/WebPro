@@ -1,0 +1,18 @@
+﻿/*3_표태그2.에서사용*/
+    table
+
+{
+    background-color: red;
+}
+
+tr {
+    background-color: yellow;
+}
+
+    tr:hover {
+        background-color: lightgreen;
+    }
+
+caption {
+    background-color: lightyellow;
+}
