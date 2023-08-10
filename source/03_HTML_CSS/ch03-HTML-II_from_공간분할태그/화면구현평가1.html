@@ -7,14 +7,14 @@
     <link href="화면구현평가1.css" rel="stylesheet" type="text/css" />
     <script>
         function chk() {
-            if (frm.id.value.trim().length < 4) {
-                alert("아이디는 4글자 이상 필수 입력입니다");
-                frm.id.focus();
+            if (frm.name.value.trim().length < 2) {
+                alert("이름은 2글자 이상 필수 입력입니다");
+                frm.name.focus();
                 return false;
             } else if
-                (frm.name.value.trim().length < 2) {
-                alert("이름은 두글자 이상 필수 입력입니다");
-                frm.name.focus();
+                (frm.id.value.trim().length < 4) {
+                alert("아이디는 네글자 이상 필수 입력입니다");
+                frm.id.focus();
                 return false;
             }
             else if (!frm.pw.value.trim()) {
@@ -104,9 +104,9 @@
            <ul>
                <li>
                    결혼 유 무
-                   <input type="checkbox" name="marry" value="기혼" id="기혼" />
+                   <input type="radio" name="marry" value="기혼" id="기혼" />
                    <label for="기혼">기혼</label>
-                   <input type="checkbox" name="marry" value="미혼" id="미혼" />
+                   <input type="radio" name="marry" value="미혼" id="미혼" />
                    <label for="미혼">미혼</label>
                </li>
                <li>
@@ -125,11 +125,19 @@
            </ul>
        </fieldset>
         <p>
-            <center>
-                <input type="submit" value="가입" />
-                <input type="reset" value="취소"
-            </center>
+            <div>
+                <center>
+                    <input type="submit" value="가입" />
+                    <input type="reset" value="취소"
+                </center>
+            </div>
         </p>
     </form>
 </body>
+<div id="footer">
+    <p>
+        서울시 서대문구 신촌로 141 은하비링 203호<br />
+        copyright c xx all right reserved
+    </p>
+</div>
 </html>
