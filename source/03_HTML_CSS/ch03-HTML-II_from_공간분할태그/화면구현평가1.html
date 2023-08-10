@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="화면구현평가1.css" rel="stylesheet" type="text/css" />
+    <script>
+        function chk() {
+            if (frm.id.value.trim().length < 4) {
+                alert("아이디는 4글자 이상 필수 입력입니다");
+                frm.id.focus();
+                return false;
+            } else if
+                (frm.name.value.trim().length < 2) {
+                alert("이름은 두글자 이상 필수 입력입니다");
+                frm.name.focus();
+                return false;
+            }
+            else if (!frm.pw.value.trim()) {
+                alert("비밀번호를 입력하세요");
+                frm.pw.focus();
+                return false;
+            } else if (frm.pw.value != frm.pwchk.value) {
+                alert("비밀번호를 확인하세요");
+                frm.pw.value = "";
+                frm.pwchk.value = "";
+                frm.pw.focus();
+                return false
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form action="" name="frm" onsubmit="return chk()">
+       <caption><h3>회원가입</h3></caption>
+       <fieldset>
+           <legend>필수 입력</legend>
+
+           <ul>
+               <li>
+                   <label for="name">이름<b>*</b></label>
+                   <input type="text"
+                          placeholder="이름은 2글자 이상"
+                          pattern="[가-힣]{2,5}"
+                          title="이름 형식이 맞지 않습니다"
+                          name="name"
+                          id="name"
+                          required="required"
+                          autofocus="autofocus" />
+
+               </li>
+               <li>
+                   <label for="name">아이디<b>*</b></label>
+                   <input type="text"
+                          placeholder="아이디는 4글자 이상"
+                          pattern="\w{4,20}"
+                          title="아이디 형식이 맞지 않습니다"
+                          name="id"
+                          id="id"
+                          required="required"
+                          autofocus="autofocus" />
+               </li>
+               <li>
+                   <label for="name">비밀번호<b>*</b></label>
+                   <input type="password"
+                          placeholder="비밀번호"
+                          name="pw"
+                          required="required"
+                          autofocus="autofocus" />
+               </li>
+               <li>
+                   <label for="name">비밀번호확인<b>*</b></label>
+                   <input type="password"
+                          placeholder="비밀번호 확인"
+                          name="pwchk"
+                          required="required"
+                          autofocus="autofocus" />
+               </li>
+               <li>
+                   <label for="name">연락처<b>*</b></label>
+                   <input type="text"
+                          placeholder="000-0000-0000/00-0000-0000"
+                          title="전화번호 형식이 맞지 않습니다"
+                          pattern="[0-9]{2,3}.\d{3,4}.\d{4}"
+                          name="tel"
+                          required="required"
+                          autofocus="autofocus" />
+               </li>
+               <li>
+                   <label for="name">이메일<b>*</b></label>
+                   <input type="text"
+                          placeholder="asd@domain.com/asd@domain.co.kr"
+                          title="이메일 형식이 맞지 않습니다"
+                          pattern="\w+@[0-9a-zA-Z]+(\.\w+){1,2}" />
+
+               </li>
+           </ul>
+
+       </fieldset>
+       <fieldset>
+           <legend>추가입력 사항</legend>
+           <ul>
+               <li>
+                   결혼 유 무
+                   <input type="checkbox" name="marry" value="기혼" id="기혼" />
+                   <label for="기혼">기혼</label>
+                   <input type="checkbox" name="marry" value="미혼" id="미혼" />
+                   <label for="미혼">미혼</label>
+               </li>
+               <li>
+                   자식
+                   <input type="checkbox" name="child" value="아들" id="아들" />
+                   <label for="아들">아들</label>
+                   <input type="checkbox" name="child" value="딸" id="딸" />
+                   <label for="딸">딸</label>
+               </li>
+               <li>
+                   지역 <select name="map">
+                   <option>서울</option>
+                   <option>경기</option>
+                   </select>
+               </li>
+           </ul>
+       </fieldset>
+        <p>
+            <center>
+                <input type="submit" value="가입" />
+                <input type="reset" value="취소"
+            </center>
+        </p>
+    </form>
+</body>
+</html>
