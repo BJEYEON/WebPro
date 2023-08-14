@@ -1,0 +1,80 @@
+﻿div#top {
+    width: 700px;
+    margin: 0 auto;
+    border: 1px solid gray;
+}
+
+#header {
+    height: 60px;
+    line-height: 50px;
+    text-align: center;
+    background-color: navajowhite;
+}
+
+div#navigation {
+    height: 400px;
+    line-height: 50px;
+    text-align: center;
+    background-color: white;
+}
+
+#navigation ul {
+    overflow: hidden;
+}
+
+    #navigation ul li {
+        width: 80px;
+        float: left;
+        list-style: none;
+        margin: 1px;
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+
+        #navigation ul li > a {
+            color: purple;
+            text-decoration: none;
+        }
+
+        #navigation ul li:nth-child(1n) {
+            background-color: lightpink;
+        }
+
+        #navigation ul li:first-child {
+            border-radius: 20px 0 0 20px;
+        }
+
+        #navigation ul li:last-child {
+            border-radius: 0 20px 20px 0;
+        }
+
+#midup {
+    height: 100px;
+    position: relative;
+}
+
+#middown #content {
+    width: 400px;
+    height: 180px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 99;
+}
+
+#middown #banner {
+    width: 200px;
+    height: 180px;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+}
+
+#footer {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: yellow;
+}

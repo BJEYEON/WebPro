@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        /*화면 가운데 배치*/
+        #wrap{
+            width:750px;
+            margin:0 auto
+        }
+        /*화면 가운데 배치*/
+        #header{
+            text-align:center;
+            border-bottom:1px solid gray; /*테두리*/
+        }
+        /**content*/
+        #content{
+            text-align:justify;
+            padding:0 10px; /*위 우 하좌*/
+        }
+        #content p:nth-child(2)::first-line, 
+        #content p:nth-child(3)::first-line{
+            color:blue;
+            font-size: 20px;
+            font-weight:bold; /*글씨 진하게*/
+        }
+        #content p:nth-child(2)::first-letter{font-size:2em;}/*원래 글자크기를 2배(40px)*/
+        #content p:nth-child(3) span{font-size:2em;}
+        #content ul {
+            margin:30px 0;
+        }
+        #content ul li a::after{
+            content:' - ' attr(href);
+        }
+        #content ul li a{
+            color:blue;
+            text-decoration:none; /*밑줄 없애기*/
+        }
+        #content ul li:not(.web) a{ /*부정선택자*/
+            background-color:yellow;
+        }
+        /*footer*/
+        #footer ul{
+            border-top: 1px solid gray;
+            overflow:hidden; /*수평으로 할 태그 부모단*/
+        }
+        #footer ul li{
+            float:left; /*블록형태그를 수평으로*/
+            list-style:none;
+            padding:15px 5px;
+        }
+            #footer ul li:first-child {
+                padding-top:30px;
+            }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>제목이나 회사명</h1>
+        </div>
+        <div id="content">
+            <p>What is Lorem Ipsum?</p>
+            <p>em Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <span>L</span><p>urvived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <ul>
+                <li><a href="http://www.naver.com" target="_blank">네이버</a></li>
+                <li class="web"><a href="http://www.daum.net" target="_blank">다음</a></li>
+                <li><a href="http://www.yahoo.co.kr" target="_blank">야후</a></li>
+                <li><a href="http://www.google.com" target="_blank">구글</a></li>
+            </ul>
+        </div>
+        <div id="footer">
+            <ul>
+                <li><img src="ch04/logo.png" /></li>
+                <li><img src="ch04/address.png" /></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
