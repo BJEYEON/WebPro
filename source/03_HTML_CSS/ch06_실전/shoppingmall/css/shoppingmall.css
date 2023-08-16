@@ -60,12 +60,37 @@ header .hitmenu ul li{
     font-weight:bold;
 }
 header .hitmenu ul li:first-child{
-    border
+    border-radius:0 20px 20px 0;
+}
+header .hitmenu ul li:last-child{
+    border-radius:20px 0 0 20px;
 }
 
-}
+
 /******header .lnb******/
+header .lnb {
+    border-top: 1px dashed #333333;
+    border-bottom: 1px dashed #333333;
+    /*eight: 30px;
+    line-height:30px;*/
+}
+header .lnb ul{
+    overflow:hidden;
+    width:1000px;
+    margin: 0 auto;
 
+}
+    header .lnb ul li {
+        width: 10%;
+        float: left;
+        margin: 0 1.12%;
+        height: 30px;
+        line-height:30px
+        text-align: center;
+        font-weight: bold;
+        /*border-top-style: dotted;
+        border-bottom-style:dotted;*/
+    }
 /********#content*******/
 
 /********#content .se1*******/
