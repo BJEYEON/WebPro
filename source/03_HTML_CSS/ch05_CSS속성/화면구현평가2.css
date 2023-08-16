@@ -1,0 +1,21 @@
+﻿#top {
+    border: 1px solid gray;
+  
+}
+#header{
+    text-align:center;
+    text-decoration:underline;
+}
+#title{
+    margin-right:20px;
+}
+#from{
+    text-align:right;
+    margin-left:20px;
+}
+#footer{
+    margin: 0 auto;
+    color:blue;
+    font-size:1.15em;
+    text-align:center;
+}

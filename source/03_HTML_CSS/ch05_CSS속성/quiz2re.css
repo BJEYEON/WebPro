@@ -1,4 +1,32 @@
-﻿}
+﻿﻿ /* * * * * * * 페이지 초기화 * * * * * * */
+* {
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration: none;
+    color: purple;
+    font-weight: bold;
+    display: block;
+}
+
+li {
+    list-style: none;
+}
+
+div {
+    border: 1px solid lightgray;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+/* * * * * * * 페이지 전체를 가운데로 * * * * * * */
+#wrap {
+    width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
 /* * * * * * * header * * * * * * */
 #header {
     height: 100px;
@@ -13,29 +41,30 @@
     #nav p {
         height: 40px;
         line-height: 40px;
+        margin:0; padding:0;
     }
 
-    #nav ul {
+    #nav > ul {
         width: 720px; /* ( 140:메뉴하나당width + 4:메뉴하나당 양쪽margin) * 5 = 720 */
         margin: 0 auto;
         overflow: hidden;
     }
 
-        #nav ul li {
+        #nav ul > li {
             list-style: none;
             float: left;
             width: 140px;
-            height: 50px; /* 서브메뉴시 제거할 예정 */
+            /*height: 50px;  서브메뉴시 제거할 예정 */
             line-height: 50px;
             background-color: pink;
             margin: 2px;
         }
 
-            #nav ul li:first-child {
+            #nav ul > li:first-child {
                 border-radius: 20px 0 0 20px;
             }
 
-            #nav ul li:last-child {
+            #nav ul > li:last-child {
                 border-radius: 0 20px 20px 0;
             }
 /* * * * * * * section * * * * * * */
@@ -75,3 +104,19 @@
     z-index: -99;
     opacity: 0.3;
 }
+/* * * 서브메뉴 * * * */
+#nav{
+    position:relative;
+    z-index:99;
+
+}
+.submenu{
+    border-radius:0;
+    background-color:white;
+    display:none; /*안보이게*/
+}
+/*#nav > ul:hover .submenu{ 전체 서브메뉴 펼쳐질때
+    display:block;
+}*/
+#nav ul > li:hover .submenu{display:block;}
+/*#nav와 #section이 겹치면 #nav를 위로*/

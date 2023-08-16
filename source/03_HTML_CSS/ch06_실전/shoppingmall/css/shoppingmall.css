@@ -1,0 +1,75 @@
+﻿/* css/shoppingmall.css*/
+/******페이지 초기화********/
+@font-face { /*두 폰트 설정*/
+    font-family: 'Merriweather-Light';
+    src: url('../Merriweather-Light.ttf/'); /*css파일기준*/
+}
+@font-face {
+    font-family: 'Merriweather-Regular';
+    src: url('../Merriweather-Regular.ttf/')
+}
+*{margin:0; padding:0;
+  font-family:Merriweather-Regular;
+}
+a{text-decoration:none; color:black;display:block;}
+li{list-style:none;}
+/******header******/
+/******header.gnb******/
+header .gnb {
+    background-color: black;
+    height: 30px;
+    line-height: 30px;
+    /*border:1px solid red;
+    box-sizing:border-box;*/
+}
+header .gnb ul{
+    overflow:hidden;
+    width:1000px;
+    margin:0 auto;
+
+}
+header .gnb ul li {
+    width: 80px;
+    float: left;
+    margin: 0 10px;
+    text-align: center;
+}
+header .gnb a{color:white;}
+/*****header.logo*****/
+header .logo {
+    font-family: 'Barriecito', cursive;
+    width: 200px;
+    margin: 30px auto;
+    border:1px solid gray;
+    height:100px;
+    line-height:100px;
+    text-align:center;
+}
+/******header .hitmenu******/
+header .hitmenu ul {
+    width: 1000px;
+    margin: 0 auto 3px;
+    overflow: hidden;
+    line-height: 30px;
+}
+header .hitmenu ul li{
+    width:80px;
+    float:right;
+    border:2px solid gray;
+    text-align:center;
+    font-weight:bold;
+}
+header .hitmenu ul li:first-child{
+    border
+}
+
+}
+/******header .lnb******/
+
+/********#content*******/
+
+/********#content .se1*******/
+
+/********#content .se2*******/
+
+/**********footer********/
