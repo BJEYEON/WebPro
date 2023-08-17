@@ -8,29 +8,30 @@
     font-family: 'Merriweather-Regular';
     src: url('../Merriweather-Regular.ttf/')
 }
-*{margin:0; padding:0;
-  font-family:Merriweather-Regular;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Merriweather-Regular;
 }
 a{text-decoration:none; color:black;display:block;}
 li{list-style:none;}
 /******header******/
 /******header.gnb******/
-header .gnb {
+header .gnb { /*검은색바탕*/
     background-color: black;
     height: 30px;
     line-height: 30px;
     /*border:1px solid red;
     box-sizing:border-box;*/
 }
-header .gnb ul{
-    overflow:hidden;
-    width:1000px;
-    margin:0 auto;
-
-}
+    header .gnb ul { 
+        overflow: hidden;/*한줄에 다쓰는거*/
+        width: 1000px;
+        margin: 0 auto;/*가운데 정렬*/
+    }
 header .gnb ul li {
     width: 80px;
-    float: left;
+    float: left; /*가로나열*/
     margin: 0 10px;
     text-align: center;
 }
@@ -40,7 +41,7 @@ header .logo {
     font-family: 'Barriecito', cursive;
     width: 200px;
     margin: 30px auto;
-    border:1px solid gray;
+    border:1px solid gray; /*줄 굵기*/
     height:100px;
     line-height:100px;
     text-align:center;
@@ -57,7 +58,7 @@ header .hitmenu ul li{
     float:right;
     border:2px solid gray;
     text-align:center;
-    font-weight:bold;
+    font-weight:bold; /*글씨 굵게*/
 }
 header .hitmenu ul li:first-child{
     border-radius:0 20px 20px 0;
@@ -85,16 +86,88 @@ header .lnb ul{
         float: left;
         margin: 0 1.12%;
         height: 30px;
-        line-height:30px
+        line-height:30px;
         text-align: center;
         font-weight: bold;
         /*border-top-style: dotted;
         border-bottom-style:dotted;*/
     }
 /********#content*******/
-
+#content{
+    width:1000px; margin:0 auto
+}
+#content .section1{
+    overflow:hidden;
+}
 /********#content .se1*******/
-
+    #content .slide_banner {
+        border: 1px solid gray;
+        box-sizing: border-box;
+        float: left;
+        height: 400px;
+        width: 700px;
+        border: 1px solid gray;
+        text-align:center;
+    }
+    #content .side_banner {
+        border: 1px solid gray;
+        box-sizing: border-box;
+        float: left;
+        width: 30px;
+        height: 400px;
+        width: 300px;
+        border: 1px solid gray;
+        text-align:center;
+    }
 /********#content .se2*******/
-
+#content .section2 .hit_product{
+    margin: 10px 0;
+}
+#content .section2 > div {
+    border:1px solid gray;
+}
+#content .section2 ul{
+    overflow:hidden;
+}
+#content  .section2 ul li{
+    height:400px;
+    width:24%;
+    border:1px solid gray;
+    box-sizing:border-box;
+    float:left;
+    margin-right:0.8%;
+    text-align:center;
+}
+#content .section2 ul li:first-child{
+    margin-left:0.8%;
+}
 /**********footer********/
+footer{
+    width:1000px;
+    height:100px;
+    
+    margin-top:10px;
+    margin:0 auto;
+
+}
+    footer ul {
+        overflow: hidden;
+    }
+    footer ul li {
+        width: 33%;
+        float: left;
+        height: 100px;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+footer .copy{
+    background-color:black;
+    height:50px;
+    line-height:50px;/*글씨 가운데 정렬heigt랑 똑같으면*/
+    width:1000px;
+    color:white;
+    text-align:center;/*글씨 센터*/
+    
+}
