@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" name="viewport"
+          content="width=device-width, initail-scale=1.0"/>
+    <title></title>
+    <style>
+        /*******페이지 초기화********/
+        *{margin:0; padding:0;}
+        li{list-style:none;}
+        a{text-decoration:none; color:black; font-weight:bold; display:block;}
+
+        /******공통부분*****/
+        #wrap{border:1px solid gray;
+              box-sizing:border-box;
+              text-align:justify;
+
+        }
+        #wrap #header{
+            height:70px; line-height:70px; text-align:center;
+            border:1px solid gray;
+            box-sizing:border-box;
+        }
+        #wrap #nav ul{overflow:hidden;}
+        #wrap #nav ul li{
+            float:left;
+            height:50px; line-height:50px; text-align:center;
+            border:1px solid gray;
+            box-sizing:border-box;
+        }
+        #content{
+            padding:10px;
+        }
+        #footer {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            /*background-color:gray;그라데이션 대체*/ /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#feffff+0,d2ebf9+100;Blue+3D+%2312 */
+            background: #feffff; /* Old browsers */
+            background: -moz-linear-gradient(top, #feffff 0%, #d2ebf9 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #feffff 0%,#d2ebf9 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #feffff 0%,#d2ebf9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 ); /* IE6-9 */
+        }
+        /*******스마트폰용********/
+        @media screen and (max-width:959px){
+            #wrap{
+                width:100%; background-color:lightpink;
+                font-size:1.3em;
+            }
+            #wrap #nav ul li{width:33.33%;}
+            #wrap #nav ul li:nth-child(2),
+            #wrap #nav ul li:nth-child(4){display:none;}
+
+        }
+        /***********탭용***********/
+        @media screen and (min-width:960px) and (max-width:1200px){
+            #wrap{
+                width:99%; background-color:lightgreen;
+                margin:0.5%;
+                font-size:1.1em;
+            }
+            #wrap #nav ul li{width:25%;}
+            #wrap #nav ul li:nth-child(4){display:none;}
+        }
+
+        /**********데스크탑용**********/
+        @media screen and (min-width:1201px){
+            #wrap{
+                width:800px; margin:3px auto;
+            }
+            #wrap #nav ul li{width:20%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>반응형 웹</h1>
+        </div>
+        <div id="nav">
+            <ul>
+                <li><a href="#1">menu1</a></li>
+                <li><a href="#2">menu2</a></li>
+                <li><a href="#3">menu3</a></li>
+                <li><a href="#4">menu4</a></li>
+                <li><a href="#5">menu5</a></li>
+            </ul>
+        </div>
+        <div id="content">
+            <h3>석가는 사랑의 피가 운다.</h3>
+            <p>
+                석가는 사랑의 피가 운다. 찬미를 굳세게 새가 타오르고 인간에 열매를 쓸쓸하랴? 따뜻한 무엇을 용기가 그들은 뼈 보이는 것이다. 발휘하기 뼈 우리의 별과 끝까지 우리는 노래하며 인도하겠다는 이것이다. 인간의 쓸쓸한 이성은 그들의 부패뿐이다. 인간의 가슴이 만천하의 찬미를 칼이다. 예수는 방지하는 목숨이 무엇이 것이다. 그들에게 같은 무엇이 것이 품었기 것이다. 아니한 피어나는 인생의 무엇을 그와 청춘에서만 그리하였는가?
+
+                구하지 뜨고, 얼음과 인도하겠다는 새가 거선의 위하여, 눈이 칼이다. 얼마나 주는 청춘을 구하지 이상을 것이다. 소리다.이것은 보내는 풍부하게 무엇을 같으며, 인류의 거선의 설산에서 부패뿐이다. 유소년에게서 그러므로 같이, 청춘을 얼마나 목숨이 든 인생에 꽃이 듣는다. 있는 실현에 맺어, 공자는 소담스러운 가장 이것이다. 작고 인생의 그들의 노년에게서 영원히 그들은 가진 철환하였는가? 품었기 위하여, 같은 두손을 이상, 그들의 내는 것이다. 과실이 힘차게 되는 인생을 있음으로써 운다. 심장은 것은 놀이 사는가 별과 투명하되 사막이다. 있는 거선의 소담스러운 얼마나 가치를 있는 용감하고 피다.
+
+                찬미를 목숨이 따뜻한 이상은 바이며, 쓸쓸하랴? 길지 생명을 품고 이상, 이것은 타오르고 사막이다. 그림자는 거선의 주는 긴지라 천자만홍이 인생에 피다. 소담스러운 대중을 구하지 온갖 못할 꽃이 고행을 위하여, 보라. 하는 평화스러운 속에서 원대하고, 청춘에서만 위하여서 이상의 아니다. 타오르고 뼈 생의 힘차게 노년에게서 품으며, 바로 황금시대다. 오직 찬미를 같은 모래뿐일 인간은 웅대한 위하여서, 있다. 열락의 품고 위하여, 바이며, 하여도 청춘의 봄바람이다. 목숨이 대한 무한한 힘차게 그들은 피다.
+            </p>
+
+        </div>
+        <div id="footer">
+            홍길동 주식회사
+        </div>
+    </div>
+</body>
+</html>
