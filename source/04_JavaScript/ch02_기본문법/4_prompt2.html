@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        let str_score = prompt("점수를 입력하세여", '1~100' );
+        //document.write("str_score타입:" + typeof(str_score) + "/값" + str_score);
+        if(!str_score){
+            alert('점수를 입력하세여');
+        }else{
+            document.write('입력한 점수는' + str_score);
+            let score = Number(str_score); // string을 number로 형변환 함수. 형변환불가경우 nan 빈string을 형변환할 경우 0
+            //score = parseInt(str_score);//string을 number로 형변환 함수, 형변환불가 경우nan값 ''을 형변환할 경우 nan
+            if (isNaN(score)){
+                alert('점수를 입력하세요');
+            }else{
+                result = score>=70 ? '뭐 잘했습니다':'분발하세여';
+                document.write('<h2>' + result + '</h2>')
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

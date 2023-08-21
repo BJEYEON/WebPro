@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        // 자료형 : underfined, number, string, boolean, function, object(array포함)
+        var variaable;
+        document.write("1. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+        variaable = -2200000000
+        document.write("2. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+        variaable = "이름은 \"홍길동\"입니다"
+        document.write("3. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+        variaable = false;
+        document.write("4. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+        variaable = function (){
+            alert("함수 속");
+
+        };
+        document.write("5. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+       // variaable();//함수호출
+       variaable = {"name":"홍길동", "age":20};
+       document.write("6. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+       document.write(variaable.name + "/" + variaable.age + "<br>")
+       variaable = [1,2,3]; //배열
+       document.write("7. 변수타입:" + typeof(variaable) + "/값:" + variaable + "<br>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

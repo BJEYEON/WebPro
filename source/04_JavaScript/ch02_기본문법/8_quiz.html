@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //국어
+        do{
+            var str_Korscore = prompt("국어점수를 입력하세요", '1~100');
+            var kor = parseInt(str_Korscore);
+            if (isNaN(kor) ||100<kor || 0>kor){
+                alert('점수를 다시 입력하세요');
+            }else{
+                break;
+            }
+        } while(true);
+        //수학
+        do{
+            var str_Mathscore = prompt("수학점수를 입력하세요", '1~100');
+            var math = parseInt(str_Mathscore);
+            if (isNaN(math) || 100<math || 0>math){
+                alert('점수를 다시 입력하세요');
+            }else{
+                break;
+            }
+        } while(true);
+        document.write('국어점수:' + kor + '수학점수:' + math + '평균점수:' + (kor+math)/2 );
+    </script>
+</head>
+<body>
+
+</body>
+</html>
