@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var str_input = "";
+        var int_score =0;
+        var int_total = 0;
+        var int_success = 0;
+        var int_miss = 0;
+        
+        while(confirm('누적할래?')){
+            var str_input = prompt('누적할 점수?');
+            str_input = parseInt(str_input);
+            if(!isNaN(str_input) && str_input<100 && str_input>0){
+                int_score += int_score;
+                int_total++;
+                int_success++;
+            }else{
+                alert('잘못입력했습니다.');
+                int_total++;
+                int_miss++;
+            }
+        }
+        document.write(int_total + '번입력<br>');
+        document.write('누적점수:' + int_score+'<br>');
+        document.write('점수를 제대로 입력한 횟수' + int_success+'<br>');
+        document.write('점수를 잘못 입력한 횟수:' + int_miss+'<br>')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

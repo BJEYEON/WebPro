@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var i = 'hello';
+        document.write(i + '<br>');
+        var functionVar = function(i, j){
+            alert(i + 'test' + j);
+        }; //익명함수
+        document.write(functionVar + '<br>');
+        document.write(typeof(functionVar) + '<br>');
+        functionVar(10, 20); //익명함수 호출은 변수의 이름으로 호출
+        var functionVar = (i, j)=>{ //function생략하고 =>
+            alert(i + '/' + j);
+        };
+        functionVar(10,20);//익명함수 호출은 변수의 이름으로 호출
+    </script>
+</head>
+<body>
+
+</body>
+</html>

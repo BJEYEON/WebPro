@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{width: 900px; margin: 0 auto;}
+        td{text-align: center; padding: 2px;}
+    </style>
+    <script>
+        document.write('<table>');
+        <caption>document.write('<h3>2~9단 구구단</h3>');</caption>
+        for(let i=2; i<=9; i++){
+            document.write(i+'단 &nbsp; &nbsp;');
+        }
+        document.write('<br>');
+        //2~9단 까지 출력
+        for(let j=1; j<=9; j++){
+            for(let i=2; i<=9; i++){
+                document.write(i + '*' + j +'=' + (i*j) + '&nbsp; &nbsp;');
+            }
+            document.write('<br>');
+        }
+        document.write('</table>')
+    </script>
+</head>
+<body>
+
+</body>
+</html>

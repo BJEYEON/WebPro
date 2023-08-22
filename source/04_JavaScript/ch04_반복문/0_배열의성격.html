@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        //자바에서의 배열 : 동일자료형의 집합배열의 크기가 고정 int[] arr = {1,2,3}; 
+        //자바스크립트에서의 배열: 동일 자료형ㅇ의 집함(자료집합) 배열의 크기가 가변
+        var arr = [2,4,'홍길동'];
+        document.write('arr타입:' + typeof(arr) + '/ 값' + arr + '<br>');
+        document.write('arr방의갯수:' + arr.length + '<br>');
+        arr.push(8); //arr제일끝번방에추가
+        arr.unshift(8); //arr제일앞방에추가
+        document.write('추가후arr타입:' + typeof(arr) + '/ 값' + arr + '<br>');
+        document.write('arr방의갯수:' + arr.length + '<br>');
+        var value = arr.pop();//마지막배열방의 값을return하고 대체
+        document.write('arr에서 삭제된 값 value:' + value + '<br>');
+        document.write('추가후arr타입:' + typeof(arr) + '/ 값' + arr + '<br>');
+        document.write('arr방의갯수:' + arr.length + '<br>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
