@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script> //경고창순서: 3,3,3 for문다돌고 alert(i)를뿌림
+        // for(var i=0; i<3; i++){
+        //     setTimeout(() => { //15번settimeout이랑같음 이꼴연산
+        //         alert(i);
+        //     }, 0);
+        // }
+        //alert('for문 실행 후 i =' + i);
+        //경고창순서 : 0,1,2
+        // for(let i=0; i<3; i++){
+        //     setTimeout(() => { //15번settimeout이랑같음 이꼴연산
+        //         alert(i);
+        //     }, 0);
+        // }
+
+        //경고창순서 : 0,1,2
+        [0,1,2].forEach(function(data){
+            setTimeout(() => {
+                alert(data);
+            }, 0);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

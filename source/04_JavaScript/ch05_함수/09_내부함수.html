@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>/*a가 만든부분: 피타고라스(w,h):직각삼각형의 빗변을 return*/
+    
+        // function sqaure(x){
+        //     return x*x;
+        // }//밑에서 서도됌
+        // var sqaure = function(x){
+        //     return x*x;
+        // } //위에서 써야됌
+        // var sqaure = x=> x*x; //화살표함수 셋중암거나 써도됨
+
+        //내부함수: 함수내에 선언된 함수(목적:충돌을 피라고자)
+        //함수의 충돌을 피하기 위한 방법 :내부함수 ,자기호출함수
+
+
+       function pythagoras(width, height){
+        var sqaure = x=> x*x; //충돌 방지를 위해 함수 안에 넣음
+            return Math.sqrt(sqaure(width) + sqaure(height));//math.sqrt루트를반환
+       } 
+       
+    </script>
+    <script>/*b가 만든부분 : sqaure(w,h,hypotenuse) :직각삼각형인지 여부 return*/
+        function sqaure(width, height, hypotenuse){
+            return (width*width + height*height) === (hypotenuse*hypotenuse);
+            // if ( (width*width + height*height) === hypotenuse*hypotenuse){
+            //     return true;
+
+            // }else{
+            //     return false;
+            // }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        alert('빗변의 길이는' + pythagoras(3,4));
+        alert('직각 삼각형 여부:' + sqaure(3,4,5));
+    </script>
+</body>
+</html>

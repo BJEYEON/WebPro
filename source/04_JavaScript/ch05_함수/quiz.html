@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-image: url('img/img01.png');
+            background-size: 100%;
+            color: yellow;
+        }
+    </style>
+    <script>
+        let img = ['url(img/img01.png)', 'url(img/img02.png)', 'url(img/img03.png)'];
+        let col = ['#ffff00', '#ff00ff', '#000000'];
+        let s =0;
+        var id = setInterval(function(){
+            
+                document.body.style.backgroundImage = img[s%3];
+                document.body.style.color = col[s%3];
+                document.body.innerHTML = new Date().toLocaleDateString() + '<br>';
+                s++;
+
+        }, 1000);
+
+        setTimeout(function(){
+            clearInterval(id);
+        }, 10000)
+        //document.write = ('테스트<br>');
+        //document.body.style = "background-image: url('img/img01.png'); color: yellow";
+        //document.body.style.backgroundImage = 'url(img/img01.png)';
+        //document.body.style.color = '#000000';
+        //document.body.style = 'color:' + img[s%3];
+    </script>
+</head>
+<body>
+    1초 후부터 10초동안 시간출력
+</body>
+</html>
