@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*class Student{
+            private String name;
+            public Student(String name){
+                this.name = name;
+            }
+        }
+        Student s = new Student("홍길동");
+        */
+       function Student(name, kor, mat, eng, sci){
+        this.name = name;
+        this.kor = kor;
+        this.mat = mat;
+        this.eng = eng;
+        this.sci = sci;
+        
+       }//생성자 함수
+       Student.prototype.getSum = function(){
+        return this.kor + this.eng + this.sci;
+       };
+       Student.prototype.getAvg = function(){
+        return this.getSum() /4;
+       };
+       Student.prototype.toString = function(){
+        let output = '';
+            for(let i in this){
+                if(i != 'getSum' && i != 'getAvg' && i != 'toString'){
+                    output += i + ":" + this[i] + ' &nbsp';
+                }else if(i == 'getSum' || i == 'getAvg'){
+                    output += i.substring(3).toLowerCase() + ':' + this[i]() + '&nbsp;';
+                }//if
+            }//for
+            return output;
+       };
+
+
+
+
+
+
+       let s = new Student("홍길동", 100, 100, 100,99);
+       document.write(s + '<br>');
+       document.write(s.constructor); //생성자 함수 (소스)
+       document.write(alert); //기본내장 함수의 소스는 못보도록 막혀있음
+       let Students = [new Student("홍길동", 99, 88, 97, 99),
+                        new Student("박길동", 99, 88, 97, 99),
+                        new Student("윤길동", 99, 88, 97, 99),
+                        new Student("서길동", 99, 88, 97, 99),
+                        new Student("이길동", 99, 88, 97, 99), ];
+        Students.forEach(function(data, idx){
+            document.write(idx + '번째 :' + Students[idx] + '<br>')
+        });
+        document.write(Students.length + '명');
+        Students.pop();
+        document.write('<hr>삭제후<br>');
+        Students.forEach(function(data, idx){
+            document.write(idx + '번째 :' + Students[idx] + '<br>')
+        });
+        document.write(Students.length + '명');
+    </script>
+</head>
+<body>
+
+</body>
+</html>
