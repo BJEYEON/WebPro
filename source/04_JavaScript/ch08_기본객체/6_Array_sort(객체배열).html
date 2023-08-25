@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        function Student(name, kor, mat){
+            this.name = name;
+            this.kor = kor;
+            this.mat = mat;
+        }//생성자 함수
+        Student.prototype.getSum = function(){
+            return this.kor + this.mat;
+        };
+        Student.prototype.getAvg = function(){
+            return this.getSum()  / 2;
+        };
+        Student.prototype.toString = function(){
+            return this.name + ' ' + this.kor + ' ' + this.mat + ' ' + this.getSum() + ' ' + this.getAvg() + '<br>';
+        };//생성자함수와 prototype
+        let Students = [new Student('홍길동', 80, 99),
+                        new Student('김길동', 81, 91),
+                        new Student('박길동', 82, 92),
+                        new Student('이길동', 83, 93),
+                        new Student('장길동', 84, 94),]
+        document.write('<h3>이름 순정렬후</h3>'); 
+        Students.forEach(function(data, idx){
+            document.write(idx + ':' + data);
+        });
+        Students.sort(function(left, right){
+            return right.kor - left.kor; // 국어기준으로 내림차순 정렬
+        });
+        document.write('<h3>국어순 내림차 순 정렬후</h3>'); 
+        Students.forEach(function(data, idx){
+            document.write(idx + ':' + data);
+        });
+        Students.sort(function(left, right){
+            return right.getSum() - left.getSum();//총점 기준으로 내림차순 정렬
+        });
+        document.write('<h3>총점순 내림차 순 정렬후</h3>'); 
+        Students.forEach(function(data, idx){
+            document.write(idx + ':' + data);
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

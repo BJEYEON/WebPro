@@ -26,9 +26,37 @@
             ex2. 이메일 [a-zA-Z0-9]{2,}@[a-zA-Z0-9]+(\.[a-zA-Z]+){1,2}
             ex3. 주민번호 [0-9]{6}-[1-4][0-9]{6}
             ex4. ip주소
+        4. 소스구현
         -->
     <script>
-        
+        var str = 'abcd!abcd가';
+        //패턴
+        var patternNum = /[0-9]/; //숫자패턴
+        var patternEng = /[a-zA-Z]/; //대소문자ㅠㅐ턴
+        var patternKor = /[가-힣ㄱ-ㅎㅏ-ㅣ]/; //한글패턴
+        // 특수문자:~`@#$%^&*()_-+=[]{}|\:;"'<>,.?/  -[]\./ 은 앞에\
+        var patternSpc = /[~`!@#$%^&*()_\-+=\[\]\\{}|\:;"'<>,\.?\/]/; //특수문자패턴
+        document.write('str에 숫자포함 여부:' + patternNum.test(str) + '<br>');
+        document.write('str에 대소문자포함 여부:' + patternEng.test(str) + '<br>');
+        document.write('str에 한글포함 여부:' + patternKor.test(str) + '<br>');
+        document.write('str에 특수문자포함 여부:' + patternSpc.test(str) + '<br>');
+        // if (!patternNum (frm.pw.value.trim()) || !patternEng.test(frm.pw.value.trim()) || ){
+        //     alert('비밀번호에는 8글자,  숫자와 알파벳이 포함돼야 합니다');
+        //     frm.pw.focus();
+        //     return false;
+        // }
+        var email1 = 'hong@hong.co.kr';
+        var email2 = 'hong@hong';
+        var patternEmail = /^[a-zA-Z0-9]{2,}@[a-zA-Z0-9]+(\.[a-zA-Z]+){1,2}$/;
+        // str.match(정규표현식) : 정규표현식패턴과 일치하지 않을경우, null return
+        //                                        일치하면, str을 return
+        document.write('email1: ' + email1.match(patternEmail) + '<br>');
+        document.write('email2: ' + email2.match(patternEmail) + '<br>');
+        if(email2.match(patternEmail)){
+            document.write('email2은 메일 형식과 일치합니다');
+        }else{
+            document.write('email2은 메일 형식과 불일치합니다');
+        }
     </script>
 </head>
 <body>
