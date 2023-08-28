@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {width:280px; height: 100px; margin: 10px auto;}
+        h2 {text-align: center;}
+      </style>
+    
+    
+    <script>
+        var color = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'violet', 'white'];
+        var tds;
+        window.onload = function(){
+            tds = document.querySelectorAll('td');
+            for(let i in tds){
+                tds[i].style = 'background-color:' + color[i];
+            }
+            
+            
+        }
+        function on(num){
+            document.body.style = 'background-color: black';
+            var header = document.getElementsByTagName('h2'); //배열로
+            header[0].innerHTML = '야호 거의 끝났다';
+            header[0].style = 'color: ' + color[num];
+             
+             
+             
+         }
+         function off(){
+            document.body.style = 'background-color: white';
+         }
+    //     for (let i=0 ; i<tds.length ; i++){
+    //         function on(i){
+    //         document.body.style = 'background-color:' + color[i];
+    //     }
+    // }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td onmouseover="on(1)" onmouseout="off(0)"></td>
+            <td onmouseover="on(1)" onmouseout="off(1)"></td>
+            <td onmouseover="on(2)" onmouseout="off(2)"></td>
+            <td onmouseover="on(3)" onmouseout="off(3)"></td>
+            <td onmouseover="on(4)" onmouseout="off(4)"></td>
+            <td onmouseover="on(5)" onmouseout="off(5)"></td>
+            
+        </tr>
+    </table>
+    <h2></h2>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {width:280px; height: 100px; margin: 10px auto;}
+        /* td:nth-child(1){background-color: red;} */
+    </style>
+    
+    <script>
+        var color = ['red', 'orange', 'yellow', 'green', 'blue', 'navy', 'violet', 'white'];
+        var tds;
+        window.onload = function(){
+            tds = document.querySelectorAll('td');
+            for(let i in tds){
+                tds[i].style = 'background-color:' + color[i];
+            }
+            
+            
+        }
+        function on(a){
+             document.body.style = 'background-color:' + color[a];
+         }
+         function off(){
+            document.body.style = 'background-color: white';
+         }
+    //     for (let i=0 ; i<tds.length ; i++){
+    //         function on(i){
+    //         document.body.style = 'background-color:' + color[i];
+    //     }
+    // }
+    </script>
+</head>
+<body>
+    <h4>중간예제 1. 마우스를 올리면 바탕화면의 색상이 바뀌어요</h4>
+    <table>
+        <tr>
+            <td onmouseover="on(0)" onmouseout="off(0)"></td>
+            <td onmouseover="on(1)" onmouseout="off(1)"></td>
+            <td onmouseover="on(2)" onmouseout="off(2)"></td>
+            <td onmouseover="on(3)" onmouseout="off(3)"></td>
+            <td onmouseover="on(4)" onmouseout="off(4)"></td>
+            <td onmouseover="on(5)" onmouseout="off(5)"></td>
+        </tr>
+    </table>
+</body>
+</html>
