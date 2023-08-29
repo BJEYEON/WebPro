@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        let overlap = function(){
+            let child = open('5_id_child.html', '', 'wid=600, height=600, left=100');
+            if(!child){
+                alert('팝업차단해주세요.');
+            }
+        }
+        function chk(){
+            let idConfirmed = document.getElementById('idConfirmed').value; //"1"
+            let idTag = document.getElementById('id');
+            if (idConfirmed != '1'){
+                alert('ID 중복 확인 후 회원가입 가능 합니다');
+                return false;
+            }else if (!id){
+                alert('아이디를 입력하세요');
+                idTag.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return chk()">
+        <input type="hidden" id="idConfirmed" value="0">
+
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" id="id"></td>
+                <td><input type="button" onclick="overlap()" value="중복확인"></td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" value="회원가입">
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

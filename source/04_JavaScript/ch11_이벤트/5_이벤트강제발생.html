@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            var btna = document.getElementById('btna');
+            var btnb = document.querySelector('#btnb');
+            var countA = document.getElementById('countA');
+            var countB = document.getElementById('countB');
+            btna.onclick = function(){
+                countA.innerHTML = parseInt(countA.innerHTML) + 1;
+                btnb.onclick(); // btnb의 click이벤트 강제발생
+            };
+            btnb.onclick = function(){
+                countB.innerHTML = parseInt(countB.innerHTML) + 1;
+            };
+        };
+    </script>
+</head>
+<body>
+    <button id="btna">BUTTON A</button>
+    <button id="btnb">BUTTON B</button>
+    <h1>BUTTON A 클릭횟수 - <span id="countA">0</span>번</h1>
+    <h1>BUTTON B 클릭횟수 - <span id="countB">0</span>번</h1>
+</body>
+</html>

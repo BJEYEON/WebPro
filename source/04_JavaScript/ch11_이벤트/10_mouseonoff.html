@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var img;
+        window.onload = function(){
+            img = document.querySelector('img');
+            // img.setAttribute('src', "img/but2.gif");
+            // document.body.appendChild(img);
+        };
+            function off(){
+                
+                img.setAttribute('src', "img/but1.gif");
+                document.body.appendChild(img);
+            }
+            function on(){
+                img.setAttribute('src', "img/but2.gif");
+                document.body.appendChild(img);
+            }
+    </script>
+</head>
+<body>
+    <img onmouseup="off()" onmousedown="on()" src="img/but1.gif">
+</body>
+</html>

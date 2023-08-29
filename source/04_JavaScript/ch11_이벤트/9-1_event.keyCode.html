@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{width: 500px; margin: 10px auto; background-color: darkgreen;}
+        td{background-color: white; padding: 50px; text-align: center;}
+    </style>
+    <script>
+        window.onkeyup = function(){
+            let key = event.keyCode; //누른키의 아스키코드
+            let tds = document.getElementsByTagName('td'); //배열
+            //우측숫자 : 96(0), 97(1) ~ 105(9)
+            //위숫자 : 48(0), 49(1) ~57(9)
+            //a(65) z(99)
+            if (key>=48 && key<=57){
+                //alert('위 숫자' + (key-48) + '를 입력하셨군요');
+                //모든 td의 배경색을 white로 한후, 입력한 숫자의 td번째만 yellow
+                for (let i=0; i<tds.length; i++){
+                    tds[i].style.backgroundColor = 'white';
+                }
+                tds[key-48].style.backgroundColor = 'yellow';
+            }else if (key>=96 && key<104){
+                for (let i=0; i<tds.length; i++){
+                    tds[i].style.backgroundColor = 'white';
+                }
+                tds[key-96].style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <tr></tr><td>0</td><td>1</td><td>2</td></tr>
+            <tr></tr><td>3</td><td>4</td><td>5</td></tr>
+            <tr></tr><td>6</td><td>7</td><td>8</td></tr>
+        </tr>
+    </table>
+</body>
+</html>

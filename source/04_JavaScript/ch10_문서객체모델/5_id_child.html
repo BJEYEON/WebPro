@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload = function(){
+            var id = opener.document.getElementById('id').value;
+            var parentData = document.getElementById('id');
+            parentData.value = id;
+        }
+        function overlap(){
+            var changeid = document.getElementById('id').value;
+            opener.document.getElementById('id').value = changeid;
+            opener.document.getElementById('idConfirmed').value = 1;
+            close();
+
+        }
+    </script>
+</head>
+<body>
+        <table>
+            <tr>
+                
+                <td>ID<input type="text" id="id"></td>
+                <td><input type="button" value="체크"></td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <button onclick="overlap()">아이디사용</button>
+                </th>
+            </tr>
+        </table>
+</body>
+</html>
