@@ -1,0 +1,18 @@
+20230830
+
+Create react app을 이용한 개발환경 구축
+0.	React : 사용자 정의 태그를 만들어 주는 기술 중 하나이고 이를 component라 한다
+Component의 장점 : ①가독성 ②재사용성 ③유지보수 용이성
+Component 중심의 현대적 웹 애플리케이션 UI를 만드는 방법을 익혀 나만의 component도 만들고 남이 만든 component도 사용하자
+CODING -> RUN -> DEPLOY
+
+1.	실습 준비
+	https://reactjs.org/ 에서 Get Started -> Create a New React App의 learn how 클릭 Toolchains 사용 (https://github.com/facebook/create-react-app )
+	npm install –g create-react-app 명령어를 cmd관리자권한에서 실행 : 어디서나 global하게 create-react-app 가능(npm install tar@6 –g로 tar version을 업그레이드)
+	Create-react-app –V 로 버전 확인
+	npm(node pakage manager)과 npx의 차이는 npm은 한번 설치. Npx는 임시로 설치해서 사용하고 지운다. 실행할 때마다 새로 다운받아 쓰다 지우므로 매번 새버전 다운
+2.	개발환경 구축
+	소스 폴더를 만들어 그 폴더에서 cmd 창에서 create-react-app . 실행
+	폴더를 vs code에서 실행 : npm run start 또는 npm start 
+	public의 index.html이 브라우저에서 열림
+	src의 index.js가 실행 -> app.js 로 가는 소스를 수정

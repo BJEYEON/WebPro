@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var img ;
+        window.onload = function(){
+            img = document.querySelectorAll('img');
+            
+        };
+        function off(n){
+            img[n].setAttribute('src', 'img/' + n + 'out.jpg');
+        }
+        function on(n){
+            img[n].setAttribute('src', 'img/' + n + 'over.jpg');
+            
+        }
+    </script>
+</head>
+<body>
+    <img onmouseout="off(0)" onmouseover="on(0)" src="img/0out.jpg">
+    <img onmouseout="off(1)" onmouseover="on(1)" src="img/1out.jpg">
+    <img onmouseout="off(2)" onmouseover="on(2)" src="img/2out.jpg">
+    <img onmouseout="off(3)" onmouseover="on(3)" src="img/3out.jpg">
+</body>
+</html>
