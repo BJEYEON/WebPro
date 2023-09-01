@@ -1,0 +1,8 @@
+20230901
+
+
+REACT: CRUD
+Create : CREATE버튼을 클릭하고 값을 입력하면 화면에 띄우기
+Read : 해당 HTML객체를 클릭하면 내용을 화면에 띄우기
+Update: 해당 HTML객체를 클릭하고 변경창이 나오면 변경 후 적용된 값을 화면에 띄우기
+Delete: 해당 HTML객체를 클릭하고 DELETE버튼을 클릭하면 지우기
