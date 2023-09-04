@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h2, button {display: inline-block; margin: 0;}
+    </style>
+</head>
+
+    <div>다른 부분</div>
+    <hr>
+    <div id="root"></div>
+    <hr>
+    <div>다른부분</div>
+     <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <!-- 실무에서는 배포용보다 웹팩이나 바벨로 사용한다 -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+//         class LikeButton extends React.Component{
+//             constructor(props){
+//                 super(props);
+//                 this.state = {liked : Boolean(Number(props.liked))};
+//             }
+//             render(){
+//                 if(this.state.liked){
+//                     return (<h2>You liked this</h2>);
+//                 }
+//                 return (
+//                     <button onClik={()=>{
+//                         this.setState({liked : true});
+//                     }}>
+//                         지금은 아니라도 좋아요 클릭
+//                     </button>
+//                 );
+//             }
+//         }
+    const LikeButton = props => {
+        // hook변수(일반 지역변수를 state화)
+        const [liked, setLiked] = React.useState(Boolean(Number(props.liked)) );
+        if(liked == true){
+            return (
+                <h2>You liked this. thanks</h2>
+            );
+        }
+        return (
+            <button onClick={()=>{
+                setLiked(true);
+            }}>
+            지금은 아니라도 좋아요 클릭
+            </button>
+        );
+
+    };
+    </script>
+  <script type="text/babel">
+    ReactDOM.createRoot(document.getElementById('root')).render(
+      <div>
+        jQuery : <LikeButton liked="1"/><br/>
+        React : <LikeButton liked="0"/>
+      </div>
+    );
+</script>
+</body>
+</html>
