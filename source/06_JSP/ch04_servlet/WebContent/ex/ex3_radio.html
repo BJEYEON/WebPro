@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		document.getElementsByTagName('form')[0].onsubmit = function(){
+			var agreeyes = document.querySelector('input[type="radio"]');
+			var agreeyes = document.getElementsByName('agree')[0];
+			if(!agreeyes.checked){
+				alert('동의하셔야 진행 가능합니다');
+			return false;
+			}
+			
+		};
+	};
+</script>
+</head>
+<body>
+	<fieldset>
+		<legend>약관</legend>
+		기관과 돋고, 귀는 청춘이 든 얼음에 피가 이상 만천하의 교향악이다. 우리의 되는 이상은 있으며
+	</fieldset>
+	<form actiom="../Ex2">
+		<p>
+		<input type="radio" name="agree" value="yes">동의합니다<br>
+		<input type="radio" name="agree" value="no" checked="checked">동의하지 않습니다<br>
+		<input type="submit" value="다음">
+		</p>
+	</form>
+</body>
+</html>

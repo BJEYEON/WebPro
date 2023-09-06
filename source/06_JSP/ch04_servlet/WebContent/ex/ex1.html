@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a href="https://localhost:8090/ch04_servlet/Ex1?name=홍길동&pw=111">Ex1에 name과 pw넘기기</a>
+	<hr>
+	<button onclick="location.href='/ch04_servlet/Ex1?name=홍길동&pw111'">
+	Ex1에 name과 pw넘기기
+	</button>
+	<hr>
+	<form action="/ch04_servlet/Ex1" method="get">
+		<p>이름 <input type="text" name="name"></p>
+		<p>비번 <input type="password" name="pw"></p>
+		<p><input type="submit" value="Ex1에 name과 pw넘기기"></p>
+	</form>
+	<hr>
+	<form action="/ch04_servlet/Ex1" method="post">
+		<p>이름 <input type="text" name="name"></p>
+		<p>비번 <input type="password" name="pw"></p>
+		<p><input type="submit" value="Ex1에 name과 pw넘기기"></p>
+	</form>
+	
+	
+</body>
+</html>

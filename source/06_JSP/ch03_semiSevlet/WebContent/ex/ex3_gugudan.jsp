@@ -5,6 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
+	<script>
+	</script>
 </head>
 <body>
 	<h2>원하는 구구단을 선택하세요</h2>

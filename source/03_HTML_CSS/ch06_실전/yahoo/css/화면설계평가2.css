@@ -83,7 +83,7 @@ header #header_info input[type='text']{
        text-align:center;
        font-weight:bold;
        font-size:15px;*/
-        border:1px solid gray;
+        /*border:1px solid gray;*/
         float: left;
         width:80px;
         /*margin: 20px 15px 0 15px;*/
