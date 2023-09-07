@@ -1,0 +1,5 @@
+https://www.oracle.com/database/technologies/xe-prior-release-downloads.html (oracle 11g XE)-수업시간에 쓸 버전
+
+https://www.oracle.com/database/technologies/xe18c-downloads.html (oracle 18c XE)
+
+https://www.oracle.com/tools/downloads/sqldev-downloads.html (SQL Developer)

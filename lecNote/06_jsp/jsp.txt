@@ -1,0 +1,11 @@
+<jsp동작원리>
+브라우저에서 http://localhost:8081/ch_semiJSP/
+
+소스폴더
+C:\WebPro\source\06_JSP\ch_semiJSP\WebContent
+
+실행폴더
+C:\WebPro\IDE\apache-tomcat-jsp\apache-tomcat-9.0.80\wtpwebapps\ch_semiJSP
+
+작업폴더(jsp를 서블릿(자바안의 html)
+C:\WebPro\IDE\apache-tomcat-jsp\apache-tomcat-9.0.80\work\Catalina\localhost\ch_semiJSP\org\apache\jsp 생성하여 실행한 결과인 html을 브라우저에 던짐

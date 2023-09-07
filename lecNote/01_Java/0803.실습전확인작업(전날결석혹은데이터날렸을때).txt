@@ -1,0 +1,50 @@
+-- MYSQL에서 작업 : Workbench에서 다음을 실행
+create database kimdb;
+use kimdb;
+drop table if exists division;
+create table division (
+	dno int primary key,
+    dname varchar(20),
+    phone varchar(20),
+    position varchar(20));
+show tables;
+desc division;
+select * from division;
+drop table if exists personal;
+create table personal (
+	pno int,
+    pname varchar(20),
+    job varchar(15) not null,
+    manager int,
+    startdate date,
+    pay int,
+    bonus int,
+    dno int,
+    primary key(pno),
+    foreign key(dno) references division(dno));
+
+insert into division values (10,'finance','02-277-0411','마포');
+insert into division values (20,'research','032-277-0411','인천');
+insert into division values (30,'sales','02-555-4985','강남');
+insert into division values (40,'marketing','041-1111-5555','대전');
+insert into personal values (1111,'smith','manager', 1001, '1990-12-17', 1000, null, 10);
+
+insert into personal values (1112,'ally','salesman',1116,'1991-02-20',1600,500,30);
+insert into personal values (1113,'word','salesman',1116,'1992-02-24',1450,300,30);
+insert into personal values (1114,'james','manager',1001,'1990-04-12',3975,null,20);
+insert into personal values (1001,'bill','president',null,'1989-01-10',7000,null,10);
+insert into personal values (1116,'johnson','manager',1001,'1991-05-01',3550,null,30);
+insert into personal values (1118,'martin','analyst',1111,'1991-09-09',3450,null,10);
+insert into personal values (1121,'kim','clerk',1114,'1990-12-08',4000,null,20);
+insert into personal values (1123,'lee','salesman',1116,'1991-09-23',1200,0,30);
+insert into personal values (1226,'park','analyst',1111,'1990-01-03',2500,null,10);
+select * from personal;
+commit;
+
+-- ORACLE에서 작업 : cmd창 띄워
+c:/>sqlplus "/as sysdba   -- 시스템권한으로 접근한다
+SQL>create user scott identified by tiger; -- scott이라는 사용자 계정을 만든다.
+SQL>grant dba to scott;   -- scott을 dba권한으로
+SQL>exit
+c:/>sqlplus scott/tiger;  -- soctt으로 들어가는 명령
+SQL>@d:/mega_IT/demo.sql;     -- sql 화일을 한꺼번에 수행

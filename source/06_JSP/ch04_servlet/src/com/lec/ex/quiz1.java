@@ -38,7 +38,7 @@ public class quiz1 extends HttpServlet {
 				int int_gugu =Integer.parseInt(gugu[i]);
 				out.println("<h2>" + gugu[i] + "단");
 				for (int q=1; q<=9; q++) {
-					out.printf("%s * %d = %d <br>", gugu[i], q, int_gugu*q);
+					out.printf("%d * %d = %d <br>", gugu[i], q, int_gugu*q);
 				}
 			}
 		}else {

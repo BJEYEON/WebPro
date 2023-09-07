@@ -1,0 +1,51 @@
+1. Oracle setup 후, cmd창을 띄워 다음 실행합니다
+2. 관리자 계정으로 접속 후 scott 계정 생성, 권한부여
+c:\~> sqlplus system/비번
+         sqlplus "/as sysdba
+SQL>create user scott identified by tiger;
+SQL>grant dba to scott;
+
+ (18c버전에서는 이 작업도 추가) alter session set "_ORACLE_SCRIPT"=true;
+   SQL>create user scott identified by tiger; 
+    버전 12c부터는 c##을 사용자 이름에 안 붙이려면
+	alter session set "_ORACLE_SCRIPT"=true;
+
+3. 관리자 계정 접속 해제
+SQL>exit;
+
+4. scott 계정으로 접속 후, 수업에 쓸 데이터 넣기
+C:~> sqlplus scott/tiger
+SQL>@d:/webPro/source/02_DBMS/demo.sql;
+C:\~~>
+
+5. scott계정으로 접속 후, 데이터 확인
+C:\~~>sqlplus scott/tiger
+SQL> SELECT * FROM TAB; 
+SQL> SELECT * FROM DEPT;
+SQL> EXIT;
+
+6. SQL developer 다운받아 압축을 푼 후 사용
+
+
+    데이터모델링 툴 exERD 툴 인스톨하여 모델링을 하여 본다
+	(DB의 생명주기 : 요구조건분석 - 설계 - 구현 - 운영 - 감시 및 개선)
+
+    이클립스에 Help-> Install New Software에 http://exerd.com/update로 plug in한다. 최종 소스의 모델링을 해본다
+
+
+  - 식별관계 : 부모테이브르이 주키가 자식테이블의 주키 or 주키군에 속한 관계
+  - 비식별관계 : 부모테이블의 주키가 자식테이블의 일반속성에 속한 관계
+
+
+
+
+
+
+   SQL>create user kim identified by 1111; -- kim 계정 생성
+   SQL>grant dba to kim;    -- kim 계정에 dba권한 부여
+       grant connect,resource to kim; - 리소스작업과 접속권한 줌
+   SQL>revoke dba from kim; --kim의 권한 박탈
+   SQL>drop user kim cascade; -- kim 계정 삭제
+   SQL>grant create session to kim -- kim이 접속할 권한 부여
+
+
