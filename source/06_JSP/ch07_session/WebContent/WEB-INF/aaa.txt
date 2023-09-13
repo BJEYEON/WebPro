@@ -1,0 +1,5 @@
+오늘 DB에 INSERT하는 대신 파일 출력
+
+id:aaa
+pwaaa
+이름aaa
