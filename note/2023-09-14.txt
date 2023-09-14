@@ -1,0 +1,10 @@
+20230914
+
+웹프로그래밍에서의 데이터베이스
+1.오라클 설치
+2.JDBC 살펴보기
+JDBC란 JAVA 프로그램에서 SQL문을 실행하여 데이터를 관리하기 위한 JAVA API.
+JDBC의 특징은 다양한 데이터 베이스에 대해서 별도의 프로그램을 만들 필요 없이, 해당 데이터 베이스의 JDBC를 이용하면 하나의 프로그램으로 데이터 베이스를 관리할 수 있다.
+우리는 Oracle을 사용하므로, Oracle용 JDBC를 사용하며, 이것은 오라클을 설치하면 자동으로 설치 되고, 이클립스에서 해당 클래스 파일을 복사하면 된다
+오라클 드라이버를 사용하기 위한 C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar 나 ojdbc6_g.jar 파일을 C:\Program Files\Java\jre1.8.0_101\lib\ext 폴더(%JAVA_HOME%/JRE/LIB/EXT 폴더) 에 복사한 후, 이클립스에서 Windows 메뉴 – preferences – Java – Installed JREs – edit – Add External JARs을 통해 두개의 jar를 등록 후 Restore Default 클릭 후 finish
+또는 톰캣 lib폴더에 ojdbc6.jar을 copy 한다(비추).
