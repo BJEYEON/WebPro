@@ -22,4 +22,6 @@ INSERT INTO FRIENDS(FNUM, FNAME, FTEL)
 --친구추가
 --친구들 출력
 SELECT * FROM FRIENDS;
+SELECT * FROM FRIENDS ORDER BY FNUM;
 select * from friends order by FNUM;
+COMMIT;
