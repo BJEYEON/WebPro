@@ -25,8 +25,16 @@ INSERT INTO BOARD (BID, BNAME, BTITLE, BCONTENT, BEMAIL, BPW, BGROUP, BSTEP, BIN
 UPDATE BOARD SET BHIT = 11 WHERE BID=1; --조회수 조작
 SELECT * FROM BOARD ORDER BY BGROUP DESC;
 -- DAO에 쓸 SQL
--- 1. 글목록(글 그룹이 최신글이 위로)
+-- 1. 글목록(전체 그룹이 최신글이 위로)
 SELECT * FROM BOARD ORDER BY BGROUP DESC;
+-- 1. 글목록(startRow부터 endrow까지 리스트)
+SELECT * FROM BOARD ORDER BY BGROUP DESC;
+SELECT ROWNUM RN, A.* 
+    FROM(SELECT * FROM BOARD ORDER BY BGROUP DESC) A; --TOP-N구분전단계
+SELECT * 
+    FROM (SELECT ROWNUM RN, A.* 
+            FROM(SELECT * FROM BOARD ORDER BY BGROUP DESC) A)
+    WHERE RN BETWEEN 1 AND 10; -- TOP-N구문 DAO에 들어갈 QUERY
 -- 2. 전체 글 갯수
 SELECT COUNT(*) CNT FROM BOARD;
 -- 3. 원글쓰기 - 작성자, 글제목, 본문, 이메일, 비번, IP BGROUP은 글번호, BSTEP은 0(BNAME, BTITTLE, BCONTNET)
@@ -34,11 +42,11 @@ INSERT INTO BOARD (BID, BNAME, BTITLE, BCONTENT, BEMAIL, BPW, BGROUP, BSTEP, BIN
     VALUES (BOARD_SEQ.NEXTVAL, '김', '제목2', '냉무', NULL, '111', BOARD_SEQ.CURRVAL, 0, 0,'192.168.5.4');
 -- 4. BID로 조회수 1올리기 (글상세보기시 필요)
 UPDATE BOARD SET BHIT = BHIT + 1 WHERE BID=1;
--- 5.사용x BID로  DTO가져오기(글상세보기) - 4번 조회수 올리고 DTO가져오기
+-- 5. BID로  DTO가져오기(글상세보기) - 4번 조회수 올리고 DTO가져오기
 
--- 6.--5 BID로 DTO가져오기(글수정FORM, 답변글쓰기FORM)
+-- 6. BID로 DTO가져오기(글수정FORM, 답변글쓰기FORM)
 SELECT * FROM BOARD WHERE BID=1;
---7.--6 글수정 (작성자, 글제목, 본문, 이메일, 비번, IP 수정)
+--7. 글수정 (작성자, 글제목, 본문, 이메일, 비번, IP 수정)
 UPDATE BOARD
     SET BNAME ='홍길동', 
         BTITLE = '바꾼제목',
@@ -47,7 +55,7 @@ UPDATE BOARD
         BPW = '111',
         BIP = '127.0.0.1'
     WHERE BID=1;
--- 8.--7 글삭제(비번을 맞게 입력한 경우에만 삭제)
+-- 8. 글삭제(비번을 맞게 입력한 경우에만 삭제)
 COMMIT;
 DELETE FROM BOARD WHERE BID=1 AND BPW='111';
 ROLLBACK;

@@ -12,6 +12,8 @@
 </head>
 <body>
 	<%
+		/*pageNum추가*/
+		String pageNum = request.getParameter("pageNum");
 		String bid = request.getParameter("bid"); //null이거나 "1"
 		BoardDao bDao = BoardDao.getInstance();
 		//list.jsp를 통해서 상세보기 페이지를 올때만 조회수1up
@@ -57,10 +59,10 @@
 		</tr>
 		<tr>
 			<td colspan="2">
-				<button onclick="location.href='<%=conPath%>/board/updateForm.jsp?bid=<%=bid%>'">수정</button>
-				<button onclick="location.href='<%=conPath%>/board/deleteForm.jsp?bid=<%=bid%>'">삭제</button>
+				<button onclick="location.href='<%=conPath%>/board/updateForm.jsp?bid=<%=bid%>&pageNum=<%=pageNum%>'">수정</button>
+				<button onclick="location.href='<%=conPath%>/board/deleteForm.jsp?bid=<%=bid%>&pageNum=<%=pageNum%>'">삭제</button>
 				<button>답변</button>
-				<button onclick="location.href='<%=conPath%>/board/list.jsp'">목록</button>
+				<button onclick="location.href='<%=conPath%>/board/list.jsp?&pageNum=<%=pageNum%>'">목록</button>
 			</td>
 		</tr>
 	</table>
