@@ -470,7 +470,7 @@ public class BoardDao {
 	// 사용자로부터 입력받을 값: bname, btitle, bcontent, bemail, bpw
 	// 원글에 대한 정보: bgroup, bstep, bindent
 	// jsp에서 request.getRemoteAddr()로 이용해서 넘어온 정보 : bip
-	public int reply(BoardDto dto) {
+	public int replyBoard(BoardDto dto) {
 		int result = FAIL;
 		preReplyStep(dto.getBgroup(), dto.getBstep()); //답변글 저장 전단계
 		Connection conn = null;

@@ -19,16 +19,21 @@ pstmt.setString(5, dto.getBpw());<%@page import="com.lec.ex.dto.BoardDto"%>
 		BoardDto originalDto = bDao.getboardNotHitup(bid); //원글의정보
 	%>
 	원글정보: <%=originalDto %>
-	<form action="<%=conPath%>/board/replyProPro.jsp" method="post">
+	<form action="<%=conPath%>/board/replyPro.jsp" method="post">
+		<input type="hidden" name="pageNum" value="<%=pageNum %>">
+		<input type="hidden" name="bid" value="<%=originalDto.getBid() %>"><!-- 원글 -->
+		<input type="hidden" name="bgroup" value="<%=originalDto.getBgroup()%>"><!-- 원글 -->
+		<input type="hidden" name="bstep" value="<%=originalDto.getBstep()%>"><!-- 원글 -->
+		<input type="hidden" name="bindent" value="<%=originalDto.getBindent()%>"><!-- 원글 -->
 		<table>
-			<caption>답변글쓰기</caption>
+			<caption><%=bid %>번 글의 답변글 쓰기</caption>
 			<tr>
 				<th>작성자</th>
 				<td><input type="text" name="bname" required="required" autofocus="autofocus"></td>
 			</tr>
 			<tr>
 				<th>글제목</th>
-				<td><input type="text" name="btitle" required="required"></td>
+				<td><input type="text" name="btitle" required="required" value="re:<%=originalDto.getBtitle()%>"></td>
 			</tr>
 			<tr>
 				<th>본문</th>
@@ -44,9 +49,9 @@ pstmt.setString(5, dto.getBpw());<%@page import="com.lec.ex.dto.BoardDto"%>
 			</tr>
 			<tr>
 				<td colspan="2">
-					<input type="submit" value="글쓰기" class="btn">
+					<input type="submit" value="답글쓰기" class="btn">
 					<input type="reset" value="초기화" class="btn">
-					<input type="button" value="목록" class="btn" onclick="location.href='<%=conPath %>/board/list.jsp'">
+					<input type="button" value="목록" class="btn" onclick="location.href='<%=conPath %>/board/list.jsp?pageNum=<%=pageNum%>'">
 		</table>
 	</form>
 </body>

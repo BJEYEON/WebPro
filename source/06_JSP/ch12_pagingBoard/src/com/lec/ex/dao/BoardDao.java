@@ -30,6 +30,7 @@ public class BoardDao {
 			Context ctx = new InitialContext();
 			DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/Oracle11g");
 			conn = ds.getConnection();
+			
 		} catch (NamingException e) {
 			System.out.println(e.getMessage());
 		}

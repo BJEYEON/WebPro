@@ -51,7 +51,7 @@
 					out.print("<td class='left'>");
 					if (dto.getBindent()>0){//답변글이라 들여쓰기
 						int width = dto.getBindent()*15;
-						out.print("<img src='"+conPath+"/img/level.gif' width='"+width+"' heigth='10'>");
+						out.print("<img src='"+conPath+"/img/level.gif' width='"+width+"' height='10'>");
 						out.print("<img src='"+conPath+"/img/re.gif'>");
 					}
 					if(dto.getBhit() > 10){
