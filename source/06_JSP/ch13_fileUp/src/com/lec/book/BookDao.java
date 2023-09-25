@@ -79,6 +79,7 @@ public class BookDao {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				int bid          = rs.getInt("bid");
 				String btitle    = rs.getString("btitle");
@@ -110,16 +111,16 @@ public class BookDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT * \r\n" + 
+		String sql = "SELECT * " + 
 				"    FROM (SELECT ROWNUM RN, A.*" + 
 				"        FROM (SELECT * FROM BOOK ORDER BY BRDATE DESC) A)" + 
 				"    WHERE RN BETWEEN ? AND ?";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			pstmt.setInt(1, startRow);
 			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				int bid          = rs.getInt("bid");
 				String btitle    = rs.getString("btitle");
@@ -133,7 +134,7 @@ public class BookDao {
 			}
 			
 		} catch (SQLException e) {
-			System.out.println(e.getMessage() + "-책 등록 실패");
+			System.out.println(e.getMessage() + "- listBook");
 		} finally {
 			try {
 				if(rs !=null) rs.close();
@@ -181,8 +182,8 @@ public class BookDao {
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
-			rs = pstmt.executeQuery();
 			pstmt.setInt(1, bid);
+			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
 				
