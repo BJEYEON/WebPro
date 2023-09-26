@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -217,5 +218,68 @@ public class CustomerDao {
 			}
 			return result;
 		}
-	
+	//6. 회원리스트 (startRow ~ endRow까지의 리스트)
+		public ArrayList<CustomerDto> listCustomer(int startRow, int endRow) {
+			ArrayList<CustomerDto> list = new ArrayList<CustomerDto>();
+			
+			Connection        conn  = null;
+			PreparedStatement pstmt = null;
+			ResultSet         rs    = null;
+			String sql = "SELECT * " + 
+					"  FROM (SELECT ROWNUM RN, CID, CPW, CNAME, CEMAIL, CADDRESS  " + 
+					"      FROM (SELECT * FROM CUSTOMER ORDER BY CID)) " + 
+					"  WHERE RN BETWEEN ? AND ?";
+			try {
+				conn = getConnection();
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startRow);
+				pstmt.setInt(2, endRow);
+				rs = pstmt.executeQuery();
+				while(rs.next()) {
+					String cid 		= rs.getString("cid");
+					String cpw      = rs.getString("cpw");;
+					String cname    = rs.getString("cname");
+					String cemail   = rs.getString("cemail");
+					String caddress =rs.getString("caddress");
+					list.add(new CustomerDto(cid, cpw, cname, null, cemail, caddress, null, null, null));
+				}
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			} finally {
+				try {
+					if(rs    != null) rs.close();
+					if(pstmt != null) pstmt.close();
+					if(conn  != null) conn.close();
+				}catch (SQLException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+			return list;
+		}
+	// 7. 가입한 회원수 return
+	public int memberCnt() {
+		int totalMemberCnt = 0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT COUNT(*) CNT FROM CUSTOMER";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			rs.next();
+			totalMemberCnt = rs.getInt("cnt");
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		return totalMemberCnt;
+	}
 }
