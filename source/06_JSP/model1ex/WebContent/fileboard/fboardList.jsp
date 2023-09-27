@@ -26,7 +26,7 @@
 		<table>
 			<!-- <caption>게시판</caption> -->
 			<tr>
-				<td><a href="<%=conPath%>/board/fboardWriteForm.jsp">글쓰기</a></td>
+				<td><a href="<%=conPath%>/fileboard/fboardWriteForm.jsp">글쓰기</a></td>
 			</tr>
 		</table>
 		<table>

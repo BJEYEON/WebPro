@@ -117,7 +117,7 @@ public class FileBoardDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		String sql = "INSERT INTO FILEBOARD (FID, CID, FTITLE, FCONTENT, FILENAME, FPW, FGROUP, FSTEP, FINDENT, FIP)" + 
-				"    VALUES (FILEBOARD_SEQ.NEXTVAL, ?, ?,?, ? , ?, FILEBOARD_SEQ.CURRVAL, 0, 0,?);";
+				"    VALUES (FILEBOARD_SEQ.NEXTVAL, ?, ?,?, ? , ?, FILEBOARD_SEQ.CURRVAL, 0, 0,?)";
 		try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement(sql);
