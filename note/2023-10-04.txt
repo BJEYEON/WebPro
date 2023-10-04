@@ -1,0 +1,21 @@
+20231004
+
+JSTL(JSP Standard Tag Library)
+1.JSTL 개요 및 설치
+(1)JSTL 개요
+ ①JSP의 경우 HTML 태그와 같이 사용되어 전체적인 코드의 가독성이 떨어집니다. (서블릿은 순수자바코드라 일관적이고 가독성도 높지만, JSP의 경우 JSP태그와 HTML태그가 반복되고 믹스되어 번잡해 보이고 가독성도 떨어진다) 그래서 이러한 단점을 보완하고자 만들어진 대표적인 태그 라이브러리가 JSTL입니다. (개발자로 하여금 효율적이고 유지보수측면에서도 좋습니다)
+ ②라이브러리란 여러 프로그램이 공통으로 사용하는 코드를 모아 놓은 코드의 집합
+ ③JSTL의 경우 우리가 사용하는 Tomcat컨테이너에 포함되어 있지 않으므로, 별도의 설치를 하고 사용합니다
+(2)JSTL을 가지고 할 수 있는 일
+ ①간단한 프로그램 로직의 구사(자바의 변수 선언, if문, for문 등에 해당하는 로직)
+ ②다른 JSP 페이지 호출(<c:redirect>, <c:import>)
+ ③날짜, 시간, 숫자의 포맷
+ ④JSP 페이지 하나를 가지고 여러 언어의 웹 페이지 생성
+(3)설치
+ ①http://tomcat.apache.org/ 접속 한 후, 좌측의 Taglibs 클릭
+ ②Apache Standard Taglib 클릭
+ ③Standard 1.1 download 클릭(https://tomcat.apache.org/taglibs/standard 접속 후 클릭해도 됨)
+ ④  binaries/ 클릭
+ ⑤  jakarta-taglibs-standard-1.1.2.zip 다운
+ ⑥압축해제
+ ⑦lib폴더의 jstl.jar와 standard.jar파일을 apache-tomcat폴더\lib에 넣는다
