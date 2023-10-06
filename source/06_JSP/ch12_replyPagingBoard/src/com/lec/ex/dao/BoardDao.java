@@ -75,49 +75,49 @@ public class BoardDao {
 		return dtos;
 	}
 	//1. 글목록(startRow~endrow까지 글 그룹이 최신글이 위로)
-		public ArrayList<BoardDto> listboard(int startRow, int endRow){
-			ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
-			Connection conn = null;
-			PreparedStatement pstmt = null;
-			ResultSet rs = null;
-			String sql = "SELECT *" + 
-					"    FROM (SELECT ROWNUM RN, A.*" + 
-					"        FROM( SELECT * FROM BOARD ORDER BY BGROUP DESC, BSTEP) A)" + 
-					"        WHERE RN BETWEEN ? AND ?";
+	public ArrayList<BoardDto> listboard(int startRow, int endRow){
+		ArrayList<BoardDto> dtos = new ArrayList<BoardDto>();
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "SELECT *" + 
+				"    FROM (SELECT ROWNUM RN, A.*" + 
+				"        FROM( SELECT * FROM BOARD ORDER BY BGROUP DESC, BSTEP) A)" + 
+				"        WHERE RN BETWEEN ? AND ?";
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, startRow);
+			pstmt.setInt(2, endRow);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				 int bid = rs.getInt("bid");
+				 String bname = rs.getString("bname");
+				 String btitle = rs.getString("btitle");
+				 String bcontent = rs.getString("bcontent");
+				 String bemail = rs.getString("bemail");
+				 int bhit = rs.getInt("bhit");
+				 String bpw = rs.getString("bpw");
+				 int bgroup = rs.getInt("bgroup");
+				 int bstep = rs.getInt("bstep");
+				 int bindent = rs.getInt("bindent");
+				 String bip = rs.getString("bip");
+				 Timestamp bdate = rs.getTimestamp("bdate");
+				 dtos.add(new BoardDto(bid, bname, btitle, bcontent, bemail, bhit, bpw, bgroup, bstep, bindent, bip, bdate));
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
 			try {
-				conn = getConnection();
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, startRow);
-				pstmt.setInt(2, endRow);
-				rs = pstmt.executeQuery();
-				while(rs.next()) {
-					 int bid = rs.getInt("bid");
-					 String bname = rs.getString("bname");
-					 String btitle = rs.getString("btitle");
-					 String bcontent = rs.getString("bcontent");
-					 String bemail = rs.getString("bemail");
-					 int bhit = rs.getInt("bhit");
-					 String bpw = rs.getString("bpw");
-					 int bgroup = rs.getInt("bgroup");
-					 int bstep = rs.getInt("bstep");
-					 int bindent = rs.getInt("bindent");
-					 String bip = rs.getString("bip");
-					 Timestamp bdate = rs.getTimestamp("bdate");
-					 dtos.add(new BoardDto(bid, bname, btitle, bcontent, bemail, bhit, bpw, bgroup, bstep, bindent, bip, bdate));
-				}
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());
-			}finally {
-				try {
-					if(rs!=null) rs.close();
-					if(pstmt!=null) pstmt.close();
-					if(conn!=null) conn.close();
-				} catch (SQLException e) {
-					System.out.println(e.getMessage());
-				}
+			}
 		}
-			return dtos;
-		}
+		return dtos;
+	}
 	//2. 전체 글 갯수
 	public int getboardTotalCnt() {
 		int totalCnt = 0;
