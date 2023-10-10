@@ -1,0 +1,14 @@
+20231010
+
+1. 글목록
+list.do 요청 → BFrontController(글목록로직분기) → BListService(DAO에 글목록 생성 요청) → BDao(DB작업) → BListService → BFrontController → list.jsp
+2. 글쓰기 
+writeView.do 요청 → write.jsp에서 submit버튼 누르면 write.do 요청 → BFrontController(글쓰기로직분기) → BWriteService(DAO에 글쓰기 요청) → BDao(DB 작업) → BWriteService → BFrontController → list.do
+3. 글 내용 보기
+content.do 요청 → BFrontController(글 내용보기 분기) → BContentService(DAO에 글 내용 보기 요청) → BDao(DB작업) → BListService → BFrontController → content.jsp
+4. 글 내용 수정
+content.j네(상세보기페이지)에서 modifyView.do 요청 → BFrontController(글수정view로 분기) → BModifyViewService(DAO에 수정할 글 가져오기) → modify.jsp → 글수정할 내용으로 변경하고 modify.do 요청 → BFrontController(글수정으로 분기) → BmodifyService → BDao(DB작업) → BListService → BFrontController → list.jsp
+5. 글 삭제
+content.jsp에서 delete.do요청 → BFrontController(글삭제로 분기) → BDeleteCommand(DAO에 글 삭제 요청) → BDao(DB작업) → BListService → BFrontController → list.jsp
+6. 답변글 달기
+content.jsp에서 replyView.do요청 → BFrontController(답변글 저장으로 분기) → BReplyViewService(DAO에 원글에 대한 정보 요청) → BDao(DB작업) → BReplyViewService  → BFrontController → reply.jsp에서 reply.do요청 → → BFrontController(답변글 저장으로 분기) → BReplyService(DAO에 답변글 요청) → BDao(DB작업) → BListService → BFrontController → list.jsp
