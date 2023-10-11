@@ -11,22 +11,9 @@
 	<link href="${conPath}/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<c:if test="${not empty joinResult }">
-		<script>
-			alert('${joinResult}');
-		</script>
-	</c:if>
-	
-	<c:if test="${not empty joinErrorMsg }">
-		<script>
-			alert('${joinErrorMsg}');
-			history.back();
-		</script>
-	</c:if>
-	<form action="${conPath }/login.do" method="post">		
-	<!-- modifyView.do -> modify.jsp(로그인 전일 경우loginView.do?next=modify.do로)-->
-		<input type="hidden" name="next" value="${param.next }"> 
-		<table>
+	<form action="${conPath }/login.do" method="post">
+	<input type="hidden" name="next" value="${param.next }">
+	<table>
 			<caption>로그인</caption>
 			<tr>
 				<th>ID</th><td><input type="text" name="mid" value="${mid }" required="required"></td>

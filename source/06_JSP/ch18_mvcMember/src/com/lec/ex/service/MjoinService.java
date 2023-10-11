@@ -73,7 +73,7 @@ public class MjoinService implements Service {
 			OutputStream os = null;
 			try{
 					is = new FileInputStream(serverFile); //서버에 업로드된파일
-					os = new FileOutputStream("C:\\WebPro\\source\\06_JSP\\ch18_mvcMember\\WebContent\\memberPhotoUp" + mphoto); //소스폴더로 복사될파일
+					os = new FileOutputStream("C:\\WebPro\\source\\06_JSP\\ch18_mvcMember\\WebContent\\memberPhotoUp\\" + mphoto); //소스폴더로 복사될파일
 					byte[] bs = new byte[(int)serverFile.length()];
 					while(true){
 						int readByteCnt = is.read(bs);
