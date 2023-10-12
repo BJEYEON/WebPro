@@ -1,0 +1,16 @@
+20231012
+
+2. jquery사용법
+jQuery.com(http://jquery.com/download)에서 다운로드한다
+jQuery는 두 가지 버전을 제공하고 있다.
+-production 버전 - 우리가 웹사이트에 적용해서 쓰는 버전(최소화 되어져 있고 압축되어졌음)
+-development 버전 - 어떻게 구성되어졌는지 보려면 이 버전을...(압축되어 있지 않음)
+-1.X 이전 브라우저 지원.(IE 6버전까지도 호환)
+-3.X  표준화 되어 있지 않은 IE 6,7,8은 지원 안 됨
+구글과 같은 CDN(Content Delivery Network) 으로부터 jQuery를 포함시키는 방법이 있다.(CDN방식)
+-http://code.jquery.com/jquery
+
+<script	 src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script	 src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+다운 로드 방식이 아닌 CDN 방식의 경우, 브라우저로 여러 사이트를 돌아다니다 보면 사용자가 CDN 정보가 cash되어 있어 빨리 로드된다.

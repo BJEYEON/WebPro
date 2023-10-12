@@ -65,14 +65,14 @@
 					//제목(왼쪽정렬. 조회수가 10이상이면hot이미지 출력. 제목 클릭시 상세보기 페이지로)
 					out.print("<td class='left'>");
 					if (dto.getFindent() > 0) {//답변글이라 들여쓰기
-				int width = dto.getFindent() * 15;
-				out.print("<img src='" + conPath + "/img/level.gif' width='" + width + "' height='10'>");
-				out.print("<img src='" + conPath + "/img/re.gif'>");
+						int width = dto.getFindent() * 15;
+						out.print("<img src='" + conPath + "/img/level.gif' width='" + width + "' height='10'>");
+						out.print("<img src='" + conPath + "/img/re.gif'>");
 					}
 					if (dto.getFhit() > 10) {
-				out.print("<img src='" + conPath + "/img/hot.gif'>");
+						out.print("<img src='" + conPath + "/img/hot.gif'>");
 					}
-					out.print("<a href='" + conPath + "/fileboard/fboardContent.jsp?fid=" + dto.getFid() + "&pageNum=" + pageNum + "'>");
+					/* out.print("<a href='" + conPath + "/fileboard/fboardContent.jsp?fid=" + dto.getFid() + "&pageNum=" + pageNum + "'>"); */
 					out.print(dto.getFtitle());
 					out.print("</a>");
 					out.print("</td>");
@@ -117,3 +117,14 @@
 <jsp:include page="../main/footer.jsp"/>
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script>
+		$(document).ready(function(){
+			$('tr').click(function(){
+				var fid = $(this).children().eq(0).text().trim();
+				if(! isNaN(Number(fid))){
+					location.href='fboardContent.jsp?pageNum=${pageNum}&fid='+fid;
+				}
+			});
+		});
+	</script>

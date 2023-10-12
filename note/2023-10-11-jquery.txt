@@ -1,9 +1,21 @@
 $('선택자').함수();
+  선택자 even, odd, eq(n), first()등이 올 수 있음
 1) html() ; 해당 선택자 안에 html코드 삽입, 가져오기
 2) text() ; 해당 선택자 안에 text삽입, 가져오기
 3) css('css속성','값')
 4) hide() ; 해당 선택자 숨기기
 5) show() ; 해당 선택자 보여주기
-
+6) toggle(); show->hide/hide->show
+7) val(); input의 value값을 수정, 가져오기
+8) each(); 배열처리
+9) addClass() : 해당 태그에 클래스 추가
+10) removeClass() : 클래스명 제거
+11) attr('속성명'): 속성값 가져오기
+     attr('속성명','속성값') : 속성값 수정하기
+12) append(); 뒤에 추가
+13) prepend() : 앞에 추가
 14) 이벤트 관련 함수
   click(콜벡함수)
+  on('이벤트명')
+  off(); 이벤트 제거
+  triger() : 이벤트 강제 발생

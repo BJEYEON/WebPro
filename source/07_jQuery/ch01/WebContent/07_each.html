@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			const array = [
+				{name : '네이버', link : 'http://www.naver.com'},
+				{name : '다음', link : 'http://www.daum.net'},
+				{name : '구글', link : 'http://www.google.com'},
+				{name : '한빛', link : 'http://www.hanbit.co.kr'},
+			];
+			array.forEach(function(item, idx){
+				document.body.innerHTML += '<h2><a href="'+ item.link +'">'+idx+'. '+item.name+'</a></h2>';
+			});
+			document.body.innerHTML += '<ht>';
+			$(array).each(function(i, item){
+				$('body').html($('body').html()+
+						'<h2><a href="'+ item.link +'">'+i+'. '+item.name+'</a></h2>');
+			});
+			$('body').html($('body').html() + '<hr>');
+			$(array).each(function(i, item){
+				$('body').html($('body').html()+
+						'<h2><a href="'+ item.link +'">'+i+'. '+item.name+'</a></h2>');
+			});
+		});
+	</script>
+
+</head>
+<body>
+	<!-- <h2><a href="http://www.naver.com">0. 네이버</a></h2>
+	<h2><a href="http://www.daum.new">1. 다음</a></h2> -->
+</body>
+</html>

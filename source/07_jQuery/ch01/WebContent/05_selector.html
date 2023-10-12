@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('tr:nth-child(3n)').css('color', 'red'); //1번째부터3, 6, 9
+			$('tr:nth-child(3n+1)').css('color', 'green'); //1번째부터1, 4, 7
+			$('tr:nth-child(3n+2)').css('color', 'blue'); //1번째부터1, 4, 7
+			$('tr:even').css('background-color', '#cccccc'); //0번쨰부터 짝수
+			$('tr:odd').css('background-color', '#ffffaa'); // 0번째부터 홀수
+			$('tr').eq(0).eq(0).css('background-color', 'black').css('color', 'white');
+			//$('tr').first().eq(0).css('background-color', 'black').css('color', 'white');
+			$('tr').last().eq(0).css('background-color', 'black').css('color', 'white');
+		});
+	</script>
+
+</head>
+<body>
+	<table>
+		<tr><th>글번호</th><th>제목</th><th>글쓴이</th><th>조회수</th></tr>
+		<tr><th>4</th><th>제목임다</th><th>홍길동</th><th>9</th></tr>
+		<tr><th>3</th><th>제목이라</th><th>김길동</th><th>8</th></tr>
+		<tr><th>2</th><th>제목이다</th><th>신길동</th><th>7</th></tr>
+		<tr><th>1</th><th>제목이네</th><th>흥길동</th><th>6</th></tr>
+		<tr><th colspan="4">총네개</th></tr>
+	</table>
+</body>
+</html>
