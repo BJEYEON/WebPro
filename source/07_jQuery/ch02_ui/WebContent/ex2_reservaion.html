@@ -33,20 +33,55 @@
 				$('span.result').html('날짜: ' + dateText + " / 시간: ");
 				//날짜 선택시 시간들 초기화
 				$('input.reservedTime').val(''); 
-				$('#0').attr('disabled', false);
-				$('#1').attr('disabled', false);
+				//$('#0').attr('disabled', false);
+				//$('#1').attr('disabled', false);
 				for(var i=0; i<=23; i++){
 					$('#'+i).attr('disabled', false);
 					$('#'+i).css('color', '#000000');
 				}//for-날짜가 바뀔때 마다 모든 시간을 클릭할 수있도록 세팅
 				//dateText가 오늘인지?
 				var today = new Date(); //지금을 2023-10-13스타일로 변경
-				alert(today);
-			},
+				var year = today.getFullYear(); // 2023
+				var month = String(today.getMonth() +1); //9
+				if(month<10){
+					month = "0" + month; //"09"
+				}
+				var day = today.getDate(); //9
+				if(day<10){
+					day = "0" + day; //09
+				}
+				var todatText = year + '-' + month + '-' + day; //2023-09-09
+				//alert(dateText+ "--" + todatText);
+				if(dateText == todatText){ //선택한 날이 오늘일경우: 지금이후 시간만 예약되도록
+					var hour = today.getHours(); //10
+					alert('오늘' + todatText + '예약은' + hour + '이후만 가능합니다');
+					// 0~hour시 까지의 시간 버튼은 클릭불가
+					for(var i=0; i<=hour; i++){
+						$('#'+i).attr('disabled', true);
+						$('#'+i).css('color', '#cccccc');
+					}//for - disabled
+				}//if - 오늘
+			},//onSelect
 	    });
 	  } );
   </script>
-
+	<script>
+		$(document).ready(function() {
+			$('#am input').click(function(){
+				$('input.reservedTime').val($('input.reservedTime').val() + 'am' + $(this).attr('class') + '시');
+				$('span.result').append('am' + $(this).attr('class') + '시');
+				$(this).attr('disable', true);
+				$(this).css('color', 'red');
+			});
+			$('#pm input').click(function(){
+				$('input.reservedTime').val($('input.reservedTime').val() + 'pm' + $(this).attr('class') + '시');
+				$('span.result').append('pm' + $(this).attr('class') + '시');
+				$(this).attr('disable', true);
+				$(this).css('color', 'red');
+			});
+		});
+	
+	</script>
 </head>
 <body>
 	<div id="datepicker"></div>
