@@ -1,0 +1,11 @@
+<jsp동작원리>
+브라우저에서 http://127.0.0.1:8090/ch02_semiJSP/hello.jsp  (ch02_semiJSP:context root)
+
+소스폴더 
+D:\webPro\source\06_JSP\ch02_semiJSP\WebContent\hello.jsp
+
+실행폴더
+D:\webPro\IDE\apache-tomcat-jsp\wtpwebapps\ch02_semiJSP\hello.jsp
+
+작업(jsp를 서블릿(자바안에 html)으로 바꾸는 ) 폴더
+D:\webPro\IDE\apache-tomcat-jsp\work\Catalina\localhost\ch02_semiJSP\org\apache\jsp\hello_jsp.java 과 hello_jsp.class 생성하여 실행한 결과인 html을 브라우저에 던짐

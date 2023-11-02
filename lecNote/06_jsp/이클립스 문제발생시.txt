@@ -1,0 +1,38 @@
+1. 문제가 자주 발생해서 이클릭스 소스 정리
+   1) 이클립스 닫는다
+   2) 소스 프로젝트를 제외한 나머지 전부 삭제
+   3) 톰캣 폴더도 삭제
+   4) 다운받은 톰캣을 IDE 폴더에 압축을 푼다(lib에 jstl.jar와 standard.jar포함)
+   5) 이클립스를 실행
+   6) Window-preferrnce에서
+   	6.1 Encoding (UTF-8)
+	      a. window -> preferences -> general -> workspace
+	      b. window -> preferences -> web -> css files
+	      c. window -> preferences -> web -> HTML files
+	      d. window -> preferences -> web -> jsp files
+    	6.2 Test Web browser
+	       window -> webBrowser-> Chrome 
+      6-1번 작업을 생략하고 싶으면 eclipse.ini 맨 밑에 "-Dfile.encoding=utf-8" 추가
+   7) 하단servers 탭에서 new를 클릭하여 tomcat설정
+      apache에 있는 tomcat을 선택하고 tomcat9.0을 연결하고 8090포트 등 정보 세가지 수정
+
+    8)프로젝트들 import   
+
+   9) 한프로젝트라도 실행시킨 후 IPv4로 변경
+eclipse > Run > Run Configuration > Apache Tomcat > Tomcat v9.0 Server >
+	Arguiments > 
+	Program arguments에 "-Djava.net.preferIPv4Stack=true" 입력
+	VM arguments:에 "-Djava.net.preferIPv4Stack=true" 입력
+  10) context.xml에 아래의 태그를 추가하고 동기화 시키기
+	<Resource 
+		auth="Container"
+		driverClassName = "oracle.jdbc.driver.OracleDriver"
+		url = "jdbc:oracle:thin:@localhost:1521:xe"
+		username = "scott"
+		password = "tiger"
+		name = "jdbc/Oracle11g" 
+		type = "javax.sql.DataSource"
+		maxActive = "10"
+		maxWait = "1000"
+	/>
+

@@ -1,0 +1,31 @@
+반정형 데이터 파일의 종류
+1. *.csv
+    location,min,max
+    '서울',24,30
+    '부산',26,31
+
+2. *.json
+     [{'location':'서울', 'min':24, 'max':30},
+     {'location':'부산', 'min':26, 'max':31}]
+
+3. *.xml
+     <section>
+	<location>서울</location>
+	<min>24</min>
+	<max>30</max>
+    </section>
+     <section>
+	<location>부산</location>
+	<min>26</min>
+	<max>31</max>
+    </section>
+
+
+
+4. *.xlse 엑셀파일
+
+5. *.txt 텍스트파일
+
+
+
+

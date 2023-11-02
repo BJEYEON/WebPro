@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cal" class="com.lec.ch02.ex1_cal.Calculator"/><!-- .Calculator cal = new .Calculator()-->
+	<bean id="myCal" class="com.lec.ch02.ex1_cal.MyCalculation">
+		<property name="calculator">
+			<ref bean="cal"></ref><!--  객체 데이터 타입의 경우는 ref로setting -->
+		</property>
+		<property name="num1">
+			<value>10</value>
+		</property>
+		<property name="num2" value="2"></property>
+	</bean>
+	<!--MyCalculation myCal = new MyCalculation  -->
+	<!-- myCal.setCalculation(cal) -->
+</beans>
