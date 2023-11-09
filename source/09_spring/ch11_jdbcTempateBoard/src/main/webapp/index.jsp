@@ -8,6 +8,6 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-	<jsp:forward page="board/list.do"></jsp:forward>
+	<jsp:forward page="board/list.do"/>
 </body>
 </html>
