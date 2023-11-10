@@ -9,6 +9,8 @@
 </head>
 <body>
 	<%-- <jsp:forward page="home.do"/> --%>
-	<jsp:forward page="emp.do"/>
+	<%-- <jsp:forward page="empList.do"/> --%>
+	<%-- <jsp:forward page="dummyInsert50.do"/> --%>
+	<jsp:forward page="empDeptList.do"/>
 </body>
 </html>
