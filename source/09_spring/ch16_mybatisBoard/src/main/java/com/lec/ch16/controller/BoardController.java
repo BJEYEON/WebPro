@@ -17,7 +17,7 @@ import com.lec.ch16.vo.Board;
 public class BoardController {
 	@Autowired
 	private BoardService boardService;
-	@RequestMapping(value="list", method=RequestMethod.GET) //뷰단 클래스이름 value=""
+	@RequestMapping(value="list", method= {RequestMethod.GET, RequestMethod.POST}) //뷰단 클래스이름 value=""
 	public String list(String pageNum, Model model) {
 		Paging paging =  new Paging(boardService.getBoardTotCnt(), pageNum, 10, 10);
 		model.addAttribute("paging", paging);
@@ -65,7 +65,7 @@ public class BoardController {
 	}
 	@RequestMapping(value="reply", method=RequestMethod.POST)
 	public String reply(Board board, HttpServletRequest request, Model model) {
-		model.addAttribute("replyResult", boardService.boardReply(board, request));
+		model.addAttribute("replyResult", boardService.boardReply(board, request)); //위에서 가져온거 jsp에있는reply replyResult로 뿌림
 		return "forward:list.do";
 		
 	}
