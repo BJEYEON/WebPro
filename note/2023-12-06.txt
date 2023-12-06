@@ -1,0 +1,31 @@
+20231206
+
+0. 서버의 요청은 4개 방식이 있음
+(1)	읽기(GET)
+(2)	쓰기(POST)
+(3)	수정(PUT)
+(4)	삭제(DELETE)
+
+1. API는 = 웹서버와 고객간의 소통방법 = 어떻게 서버랑 통신할까?
+   REST API  : detail?no=22를 detail/22로
+
+2. JavaScript : HTML에 종속된 동적언어(브라우저마다 JavaScript 해석엔진이 포함됨
+  그중 크롬의 V8엔진을 node.js로 release 하여 브라우저 내에서 말고도 다른 환경에서도 JavaScript를 실행할 수 있게 함.
+
+3. Node.js 특징
+  (1) NonpBlocking i/o : client의 요청을 다 받아 처리속도가 빠른 요청부터 응답. 자바의 경우 멀티쓰레딩이 되어 괜찮
+  (2) 코드가 쉬워 프로토타입을 만들기 좋다.
+  (3) 이미지 처리나 통계 분석 등의 서버 프로그램은 좋은 라이브러리가 없음.
+
+4. Node.js 환경 setting up
+  (1) Node.js 설치(https://nodejs.org)
+  (2) Node.js 설치 확인 : >node -v
+  (3) IDE 설치 : vscode 다운로드 및 설치
+  (4) vscode를 소스폴더(작업폴더)로 열기
+(5) express 라이브러리 설치하기
+
+ⓐ npm init - npm은 라이브러리 설치를 도와주는 도구. 어떤 라이브러리를 설치했는지 알 수 있게 하기 위한 기록을 초기화 : 디폴트로 entry point 는 index.js가 됨
+
+ⓑ npm install express : express 라이브러리 설치 (npm은 라이브러리 설치를 도와주는 도구 cf.mac의 경우 설치가 안 되면 : yarn설치및 재시작 후 yarn add express)
+
+ⓒ index.js 코드를 입력 한 후 node index.js로 서버 구동후 브라우저로 확인
