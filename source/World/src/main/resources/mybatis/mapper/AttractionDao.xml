@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.example.world.dao.IAttractionDao">
+
+	<select id="getBestattraction" resultType="com.example.world.dto.AttractionVO">
+		select * from best_at_view
+	</select>
+
+	<select id="getAttraction" resultType="com.example.world.dto.AttractionVO">
+		select * from attraction where aseq = #{aseq}
+	</select>
+	 
+	<select id="getAseqList" resultType="com.example.world.dto.AttractionVO">
+        select * from attraction
+  </select>
+
+	<select id="getrestattraction" resultType="com.example.world.dto.AttractionVO">
+        select * from  rest_at_view
+    </select>
+	
+	<select id="getBannerList" resultType="com.example.world.dto.BannerVO">
+		select * from banner where order_seq &lt;=8  order by order_seq
+	</select>
+
+
+</mapper>

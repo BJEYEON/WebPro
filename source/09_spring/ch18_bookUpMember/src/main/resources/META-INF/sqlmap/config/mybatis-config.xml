@@ -2,13 +2,17 @@
 <!DOCTYPE configuration
     PUBLIC "-//mybatis.org//DTD config 3.0//EN"
     "https://mybatis.org/dtd/mybatis-3-config.dtd">
+    
 <configuration>
+<settings>
+	<setting name="jdbcTypeForNull" value="NULL"/> <!-- date에 널 허용 -->
+</settings>
 	<typeAliases>
 		<typeAlias type="com.lec.ch18.vo.Book" alias="Book"/>
 		<typeAlias type="com.lec.ch18.vo.Member" alias="Member"/>
 	</typeAliases>
 	<mappers>
-		<mapper resource="META-INF/sqlmap/mappers/book.xml"/>
-		<mapper resource="META-INF/sqlmap/mappers/member.xml" />
+		<mapper resource="META-INF/sqlmap/mappers/Book.xml"/>
+		<mapper resource="META-INF/sqlmap/mappers/Member.xml" />
 	</mappers>
 </configuration>

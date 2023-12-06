@@ -66,7 +66,7 @@ public class MemberServiceimpl implements MemberService {
 	public String loginCheck(String mid, String mpw, HttpSession httpSession) {
 		String result="로그인성공";
 		Member member = memberRepository.getDetailMember(mid); //db에서 가져온id정보
-		if(member == null || member.getMpw() != mpw) { //입력한 아이디가null인지? 입력한 비번과 db에 비번이 맞는지?
+		if(member == null || !member.getMpw().equals(mpw)) { //입력한 아이디가null인지? 입력한 비번과 db에 비번이 맞는지?
 			result = "아이디 혹은 비밀번호를 입력하세요";
 		}else {
 			httpSession.setAttribute("member", member);

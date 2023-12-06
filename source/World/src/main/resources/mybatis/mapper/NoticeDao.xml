@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.example.world.dao.INoticeDao">
+	<select id="getAllCount" resultType="_int">
+		select count(*) from ${param1} where ${param2} like '%'||#{param3}||'%'
+	</select>
+	
+	<select id="listNotice" resultType="com.example.world.dto.NoticeVO">
+		select * from(
+		select * from(
+			select rownum as rn, p.* from
+			((select * from notice where title like '%'||#{param2}||'%' order by nseq desc)p)
+		) where rn &gt;=#{param1.startNum}
+		) where rn &lt;=#{param1.endNum}
+	</select>
+		
+	<select id="getNotice" resultType="com.example.world.dto.NoticeVO">
+		select * from notice where nseq=#{param1}
+	</select>
+	
+	<select id="viewNotice" resultType="com.example.world.dto.NoticeVO">
+		select * from notice where nseq=#{param1}
+	</select>
+</mapper>
