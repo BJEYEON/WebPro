@@ -65,3 +65,49 @@ app.get('/list', (req, res)=>{
         res.render('list.ejs', {posts:result}); //model.addAttribute("post", result) result가 배열임 여기선
     });
 });
+app.delete('/delete', (req, res)=>{
+    // _id파라미터 값(string)의 _id(int32)인 post를 삭제한다
+    var _id = Number(req.body._id); //삭제할 _id
+    //onsole.log(_id, typeof(_id));
+    db.collection('post').deleteOne({_id :_id}, function(err, result){
+        if(err) {return console.log(err);}
+        console.log(_id, '번 post삭제 완료');
+        res.status(200).send({msg:_id +  '번 post삭제 완료'});
+    });
+});
+app.get('/detail/:id', (req, res)=>{ //'/detail/:id' == detail/3
+    var id = parseInt(req.params.id);
+    db.collection('post').findOne({_id:id}, function(err, result){
+        if(err) {return console.log(err);}
+        //console.log(result);
+        res.render('detail.ejs', {post:result});
+    });
+});
+app.get('/update/:id', (req, res)=>{
+    var id = Number(req.params.id);
+    db.collection('post').findOne({_id:id}, function(err, result){
+        if(err) {return console.log(err);}
+        res.render('update.ejs', {post:result});
+    });
+});
+app.post('/update', (req, res)=>{
+    console.log('수정내용: ', req.body); //{_id:2, title:'노드', date:'2023-12-12'}
+    var _id = Number(req.body._id);
+    // updateOnde({조건}, {${inc : {수정내용}}, 콜백함수)
+    db.collection('post').updateOne({_id:_id},
+                                    {$set : {title:req.body.title,
+                                            date: req.body.date}},
+                                    (err, result)=>{
+                                        if(err) {return console.log(err);}
+                                        res.redirect('/detail/'+_id);
+    });
+}); 
+app.put('/update', (req, res)=>{
+    var _id = Number(req.body._id);
+    db.collection('post').updateOne({_id:_id},
+        {$set : {title:req.body.title, date : req.body.date}},
+        (err, result)=>{
+            if(err) {return console.log(err);}
+            res.status(200).send({msg:_id + '번째post수정완료했습니다'})
+        });
+});                                         
