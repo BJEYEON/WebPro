@@ -18,7 +18,7 @@ public class FriendRepositoryImpl implements FriendRepository{
 
     @Override
     public Optional<Friend> findById(Long id) {
-        return Optional.ofNullable(store.get(3)); //id가 null이면nulㅣ을 리턴하기때문에 옵셔널로감쌈
+        return Optional.ofNullable(store.get(id)); //id가 null이면nulㅣ을 리턴하기때문에 옵셔널로감쌈
     }
 
     @Override

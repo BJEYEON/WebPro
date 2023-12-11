@@ -1,0 +1,29 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.ch05_friend.repository">
+    &lt;!&ndash;<resultMap id="Friend" type="FriendResult">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="tel" column="tel"/>
+    </resultMap>&ndash;&gt;
+    <insert id="save" parameterType="Friend">
+        INSERT INTO FRIEND VALUES (FRIEND_ID_SQ.NEXTVAL, #{name}, #{tel})
+    </insert>
+    <select id="findByTel" parameterType="String" resultType="Friend">
+        SELECT * FROM FRIEND WHERE TEL=${tel}
+    </select>
+    <select id="findAll" resultType="Friend">
+        SELECT * FROM FRIEND
+    </select>
+    <select id="findById" parameterType="long" resultType="Friend">
+        SELECT * FROM FRIEND WHERE ID=${id}
+    </select>
+    <delete id="deleteAll">
+        DELETE FROM FRIEND
+    </delete>
+    <delete id="deleteOne" parameterType="long">
+        DELETE FROM FRIEND WHERE ID=${id}
+    </delete>
+</mapper>-->
